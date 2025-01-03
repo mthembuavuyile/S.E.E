@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.E. Genesis Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c; 
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f1c40f;
+        }
+
+        body {
+            background: #f5f6fa;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Navbar */
+        .navbar {
+            background: var(--primary);
+            padding: 1rem;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚡";
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Enhanced Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: calc(50% - 2px);
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .timeline-date {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 20px;
+        }
+
+        /* Enhanced Document Section */
+        .document-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        .document-card {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .button {
+            background: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .button::after {
+            content: "→";
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            background: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .button:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* Section Headers */
+        section h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                margin-left: 20px;
+            }
+
+            .document-card {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile Menu Button */
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">S.E.E. Genesis</div>
+            <button class="menu-button">☰</button>
+            <div class="nav-links">
+                <a href="#timeline">Timeline</a>
+                <a href="#documents">Documents</a>
+                <a href="#calendar">Calendar</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Sandanezwe Embodiment of Excellence</h1>
+        <p>Board Portal</p>
+    </section>
+
+    <section class="timeline" id="timeline">
+        <h2>Timeline</h2>
+        <div class="timeline-item">
+            <div class="timeline-date">December 27, 2023</div>
+            <p>First communication on WhatsApp group</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">December 30, 2023</div>
+            <p>First meeting</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">January 02, 2024</div>
+            <p>Second meeting</p>
+        </div>
+    </section>
+
+    <section class="document-section" id="documents">
+        <h2>Documents</h2>
+        <div class="document-card">
+            <div>
+                <h3>S.E.E Genesis Board Meeting</h3>
+                <p>Initial meeting minutes and agenda</p>
+            </div>
+            <a href="#" class="button">View Document</a>
+        </div>
+        <div class="document-card">
+            <div>
+                <h3>S.E.E January Meeting</h3>
+                <p>January meeting minutes</p>
+            </div>
+            <a href="#" class="button">View Document</a>
+        </div>
+        <div class="document-card">
+            <div>
+                <h3>Letter of Appeal to Mr Nzimande</h3>
+                <p>Official communication</p>
+            </div>
+            <a href="#" class="button">View Document</a>
+        </div>
+    </section>
+</body>
+</html>

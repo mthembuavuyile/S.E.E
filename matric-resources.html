@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Empowering South African Matric Students with free study resources, application tools, and study tips to excel academically.">
+        <meta name="keywords" content="Matric, South Africa, Study Resources, Past Papers, Applications, Study Tips, NSFAS, University, SEE, Sandanezwe Embodiment of Excellence">
+        <meta name="author" content="Sandanezwe Embodiment of Excellence (SEE)">
+        
+        <!-- Open Graph Metadata for Social Sharing -->
+        <meta property="og:title" content="Matric Resource Hub | South African Study Resources">
+        <meta property="og:description" content="Access free resources and tools to support South African matric students. Study tips, past papers, applications, and more.">
+        <meta property="og:image" content="https://example.com/images/matric-resource-hub-preview.png">
+        <meta property="og:url" content="https://example.com/matric-resource-hub">
+        <meta property="og:type" content="website">
+        
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Matric Resource Hub | South African Study Resources">
+        <meta name="twitter:description" content="Empowering South African matric students with free study resources and practical tools.">
+        <meta name="twitter:image" content="https://example.com/images/matric-resource-hub-preview.png">
+        <meta name="twitter:creator" content="@SandanezweSEE">
+        
+        <!-- Favicon -->
+        <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+        
+        <!-- Title -->
+        <title>Matric Resource Hub | South African Study Resources</title>
+        
+        <!-- CSS and Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #ffdd00;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 1rem 2rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .card-title {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .card-content {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffe333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .study-tips {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: var(--text-dark);
+        }
+
+        .study-tips-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tips-list {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 250px;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                transition: 0.3s;
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="#" class="logo">📚 Matric Resource Hub</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="#resources" class="nav-link">Study Resources</a>
+                <a href="#applications" class="nav-link">Applications</a>
+                <a href="#tips" class="nav-link">Study Tips</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="resources" class="section">
+            <h2 class="section-title">Essential Study Resources</h2>
+            <div class="resource-grid">
+                <article class="card">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Educational Apps</h3>
+                    <p class="card-content">Access free learning apps covering all matric subjects</p>
+                    <a href="https://play.google.com/store/apps/dev?id=5641247571933368869" target="_blank" rel="noopener" class="btn">Download Apps</a>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">📖</div>
+                    <h3 class="card-title">Mind the Gap</h3>
+                    <p class="card-content">Access official DBE study guides for all subjects</p>
+                    <a href="https://www.education.gov.za/Curriculum/LearningandTeachingSupportMaterials(LTSM)/MindtheGapStudyGuides.aspx" target="_blank" rel="noopener" class="btn">View Study Guides</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">📝</div>
+                    <h3 class="card-title">Past Papers</h3>
+                    <p class="card-content">Practice with previous NSC examination papers</p>
+                    <a href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx" target="_blank" rel="noopener" class="btn">Access Past Papers</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3 class="card-title">Siyavula Practice</h3>
+                    <p class="card-content">Free Mathematics and Physical Sciences practice</p>
+                    <a href="https://www.siyavula.com/" target="_blank" rel="noopener" class="btn">Start Practicing</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="applications" class="section">
+            <h2 class="section-title">Important Applications</h2>
+            <div class="resource-grid">
+                <article class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">University Applications</h3>
+                    <p class="card-content">Apply to multiple universities through the Central Applications Office</p>
+                    <a href="https://cao.ac.za" target="_blank" rel="noopener" class="btn">Apply Now</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">💰</div>
+                    <h3 class="card-title">NSFAS Funding</h3>
+                    <p class="card-content">Apply for government financial assistance for your studies</p>
+                    <a href="https://www.nsfas.org.za" target="_blank" rel="noopener" class="btn">Apply for Funding</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🧮</div>
+                    <h3 class="card-title">APS Calculator</h3>
+                    <p class="card-content">Calculate your Academic Point Score for university applications</p>
+                    <a href="https://whatcanistudy.co.za/aps/" target="_blank" rel="noopener" class="btn">Calculate APS</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="tips" class="section">
+            <h2 class="section-title">Study Tips & Strategies</h2>
+            <div class="study-tips">
+                <h3 class="study-tips-title">Effective Study Techniques</h3>
+                <ul class="tips-list">
+                    <li>Create a realistic study timetable and stick to it</li>
+                    <li>Practice with past papers under timed conditions</li>
+                    <li>Use mind maps and summaries for revision</li>
+                    <li>Take regular breaks - try the Pomodoro Technique</li>
+                    <li>Join study groups or find a study buddy</li>
+                    <li>Keep track of your progress in each subject</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Sandanezwe Embodiment of Excellence (SEE)</p>
+            <p class="footer-text">Matric Resource Hub. All Rights Reserved.</p>
+            <p class="footer-text">Supporting South African Matric Students</p>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+const navToggle = document.getElementById('nav-toggle');
+const nav = document.getElementById('nav');
+const header = document.getElementById('header');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// State management
+let lastScrollTop = 0;
+let isNavOpen = false;
+
+// Navigation toggle functionality
+function toggleNav() {
+    isNavOpen = !isNavOpen;
+    nav.classList.toggle('active');
+    navToggle.classList.toggle('active');
+    document.body.style.overflow = isNavOpen ? 'hidden' : '';
+}
+
+// Scroll handling
+function handleScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Header hide/show logic
+    if (currentScroll > lastScrollTop && currentScroll > 50) {
+        // Scrolling down - hide header
+        header.classList.add('header-hidden');
+    } else {
+        // Scrolling up - show header
+        header.classList.remove('header-hidden');
+    }
+    
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+// Smooth scrolling to sections
+function scrollToSection(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    
+    if (targetSection) {
+        const headerOffset = 80;
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+
+        // Close mobile nav if open
+        if (isNavOpen) {
+            toggleNav();
+        }
+    }
+}
+
+// Click outside nav to close (mobile)
+function handleDocumentClick(event) {
+    if (isNavOpen && !nav.contains(event.target) && !navToggle.contains(event.target)) {
+        toggleNav();
+    }
+}
+
+// Add scroll animations to cards
+function initScrollAnimations() {
+    const cards = document.querySelectorAll('.card');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        cardObserver.observe(card);
+    });
+}
+
+// Form validation for contact form (if added later)
+function validateForm(event) {
+    const emailInput = document.querySelector('input[type="email"]');
+    if (emailInput && !isValidEmail(emailInput.value)) {
+        event.preventDefault();
+        alert('Please enter a valid email address');
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Initialize all event listeners
+function initEventListeners() {
+    // Navigation toggle
+    navToggle.addEventListener('click', toggleNav);
+    
+    // Scroll handling
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Smooth scrolling for nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', scrollToSection);
+    });
+    
+    // Click outside nav
+    document.addEventListener('click', handleDocumentClick);
+    
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+                targetSection.scrollIntoView();
+            }
+        }
+    });
+
+    // Handle page load with hash
+    if (window.location.hash) {
+        setTimeout(() => {
+            const targetSection = document.querySelector(window.location.hash);
+            if (targetSection) {
+                targetSection.scrollIntoView();
+            }
+        }, 100);
+    }
+}
+
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initEventListeners();
+    initScrollAnimations();
+});
+
+// Add resize handler for mobile nav
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && isNavOpen) {
+        toggleNav();
+    }
+});
+    </script>
+</body>
+</html>

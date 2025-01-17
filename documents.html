@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.E Documents</title>
+    <style>
+                :root {
+            --text-color: #343a40; /* Dark gray for text */
+            --bg-color: #f8f9fa; /* Light gray background */
+            --heading-color: #212529; /* Darker gray for headings */
+            --accent-color: #ffc107; /* Yellow for accents */
+            --card-border: #dee2e6; /* Light gray for borders */
+            --doc-title-bg: #e9ecef; /* Very light gray for doc titles */
+            --link-color: #007bff; /* Standard blue for links */
+            --link-hover-color: #0056b3; /* Darker blue for link hover */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Use a common sans-serif */
+            margin: 0;
+            padding: 20px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px; /* Add horizontal padding */
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #ffffff; /* White header background */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 60px; /* Adjust logo size */
+        }
+
+        .nav-burger {
+            display: none; /* Initially hide burger on larger screens */
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .burger-line {
+           width: 25px;
+            height: 3px;
+            background-color: var(--heading-color);
+            margin: 5px 0;
+            transition: transform 0.3s ease;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        
+
+
+    #hero {
+        text-align: center;
+        padding-bottom: 2rem;
+        margin-top: 20px;
+    }
+    h1 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+    h2 {
+            color: var(--heading-color);
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+    h3 {
+            color: var(--heading-color);
+            font-size: 1.4rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+        }
+
+
+    .timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            margin-right: 15px;
+            color: var(--text-color);
+            flex-shrink: 0;
+        }
+
+
+        .doc-list {
+            margin-top: 2rem;
+        }
+
+        .doc-item {
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            }
+
+        .doc-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .doc-title {
+             background: var(--doc-title-bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Vertically center items */
+        }
+
+        .doc-title span {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--heading-color);
+        }
+
+         .doc-title .toggle-btn {
+            background-color: var(--accent-color); /* Button background */
+            color: var(--heading-color); /* Button text color */
+            border: none; /* Remove default button border */
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth background change on hover */
+        }
+
+        .doc-title .toggle-btn:hover {
+            background-color: #e0b100; /* Darker yellow on hover */
+        }
+       
+         .doc-content {
+            padding: 1rem;
+            color: var(--text-color);
+            display: none;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul ul {
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        ol {
+             list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        strong {
+            color: var(--heading-color);
+            font-weight: bold;
+        }
+
+        a {
+           color: var(--link-color);
+            text-decoration: none;
+             transition: color 0.3s ease;
+        }
+
+        a:hover {
+           color: var(--link-hover-color);
+            text-decoration: underline;
+        }
+
+        hr {
+           border: 0;
+            border-top: 1px solid var(--card-border);
+            margin: 1rem 0;
+        }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+    
+    .header .container {
+        flex-wrap: wrap; /* Allow wrapping of content */
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+    }
+
+       
+
+        .logo {
+             max-height: 50px;
+             margin-bottom: 10px; /* Adjust logo size */
+        }
+
+       h1 {
+            font-size: 2rem; /* Adjust heading size on smaller screens */
+       }
+       h2 {
+          font-size: 1.6rem;
+       }
+       h3 {
+         font-size: 1.3rem;
+       }
+        .timeline-item {
+            flex-direction: column;
+        }
+
+        .timeline-date {
+            margin-bottom: 5px;
+        }
+}
+        @media print {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .doc-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#home" aria-label="Go to homepage">
+                <img src="assets/images/s.e.e-logo.png" alt="S.E.E Logo" class="logo">
+            </a>
+
+            <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+
+    <h1 id="hero">S.E.E Documents</h1>
+</section>
+
+<section class="timeline" id="timeline">
+    <h2>Timeline of Events</h2>
+    <div class="timeline-item">
+        <div class="timeline-date">December 27, 2024</div>
+        <p>The initial communication was established via the WhatsApp group, marking the beginning of our journey.</p>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-date">December 30, 2024</div>
+        <p>We held our first-ever meeting, setting the foundation for future collaborations.</p>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-date">January 2, 2025</div>
+        <p>The second meeting was conducted, serving as the inaugural gathering for the year 2025.</p>
+    </div>
+</section>
+
+    <div class="doc-list">
+
+        <div class="doc-item">
+            <div class="doc-title">
+                <span>Resources for NPO Registration</span>
+                <button class="toggle-btn" onclick="toggleDocument(this)">Show</button>
+            </div>
+            <div class="doc-content">
+                
+                <strong>Resources for NPO Registration:</strong>
+                
+                <ul>
+                    <li><a href="https://www.gov.za/services/register-nonprofit-organisation">South African Government NPO Registration</a></li>
+                    <li><a href="https://www.cipc.co.za/?page_id=2132">CIPC NPC Information</a></li>
+                    <li><a href="https://www.dsd.gov.za/index.php/documents/category/76-npo-forms">DSD NPO Forms</a></li>
+                    <li><a href="https://www.npo.gov.za/">NPO registration</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="doc-item">
+            <div class="doc-title">
+                <span>S.E.E Genesis Board Meeting (Original)</span>
+                <button class="toggle-btn" onclick="toggleDocument(this)">Show</button>
+            </div>
+            <div class="doc-content">
+                <h2>Vision</h2>
+                <p>"To be a leading youth development organization, recognized for our innovative programs, passionate team, and commitment to empowering young people. We envision a future where all young people have access to opportunities, resources, and support to thrive and reach their full potential."</p>
+                
+                <h2>Mission</h2>
+                <p>"To provide a supportive and inclusive environment where young people can develop their skills, build their confidence, and unlock their full potential. We strive to foster a sense of belonging, promote social responsibility, and encourage young people to become active contributors to their communities."</p>
+              
+                <h2>Slogan and Logo</h2>
+                <ul>
+                  <li>"Ye are the light of the world, a chosen generation."</li>
+                  <li>Logo encompasses an Eagle due to its majestic incomparable qualities.</li>
+                </ul>
+              
+                <h2>Short Term Goals of S.E.E</h2>
+                <ul>
+                  <li>NSFAS applications</li>
+                  <li>CAO applications</li>
+                  <li>TVET College applications</li>
+                  <li>Exam prayer sessions along with an attainable "Exam care package" for the learners.</li>
+                </ul>
+              
+                <h2>Long Term Goals of S.E.E</h2>
+                <ul>
+                  <li>Academic camps with tutors</li>
+                  <li>Safe transportation of learners</li>
+                  <li>Cross-night programmes</li>
+                  <li>Computer/Digital Literacy Programme</li>
+                  <li>Tournaments</li>
+                </ul>
+              
+                <h2>Important Reviews:</h2>
+                <ul>
+                  <li>Registration</li>
+                  <li>Domain</li>
+                  <li>Contact details</li>
+                  <li>Physical and Postal address</li>
+                  <li>Company Bank Account</li>
+                  <li>Sponsors</li>
+                  <li>Web development and social media account</li>
+                </ul>
+              
+                <h2>Rules of S.E.E</h2>
+                <ul>
+                  <li>Respect and discipline</li>
+                  <li>No profanity</li>
+                  <li>No romantic relationships between board members</li>
+                  <li>3 strikes allowed</li>
+                  <li>Monthly Membership fees are compulsory</li>
+                  <li>No abuse of power will be tolerated</li>
+                  <li>Give prior notice of unavailability to any of the monthly online meetings</li>
+                  <li>No secret dealings are allowed, every detail should be on the table for all board members to be aware of</li>
+                  <li>No foul gossiping and bad mouthing</li>
+                </ul>
+              
+                <h2>Membership Fee</h2>
+                <p>R50 every month (you are welcome to be generous). Payable from the 1st to the 5th of every month (unless other arrangements are communicated with the CFO/Treasurer).</p>
+              </div> 
+            </div>            
+
+        <div class="doc-item">
+            <div class="doc-title">
+                <span>S.E.E Genesis Board Meeting (30/12/2024)</span>
+                <button class="toggle-btn" onclick="toggleDocument(this)">Show</button>
+            </div>
+            <div class="doc-content">
+                <p><strong>Date:</strong> 30/12/2024</p>
+                <p><strong>Venue:</strong> Mthembu (KwaMaMkhwanazi)</p>
+                <p><strong>Members Present:</strong> Samukelisiwe Mthembu, Busiswa Mthembu, Khethelo Mthembu, Mbali Mhlane, Masithembele Mthembu, Avuyile Mthembu, S'fiso Mtolo, Siphilangezwi Nxele</p>
+            
+                <h3>Vision</h3>
+                <p>"To be a leading youth development organization, recognized for our innovative programs, passionate team, and commitment to empowering young people. We envision a future where all young people have access to opportunities, resources, and support to thrive and reach their full potential."</p>
+            
+                <h3>Mission</h3>
+                <p>"To provide a supportive and inclusive environment where young people can develop their skills, build their confidence, and unlock their full potential. We want to produce a youth enriched with faith and full of the Word of God. We strive to foster a sense of belonging, promote social responsibility, and encourage young people to become active contributors to their communities."</p>
+            
+                <h3>Slogan and Logo</h3>
+                <ul>
+                    <li>"Ye are the light of the world, a chosen generation."</li>
+                    <li>Logo encompasses an Eagle due to its majestic incomparable qualities.</li>
+                </ul>
+            
+                <h3>Short Term Goals of S.E.E.</h3>
+                <ul>
+                    <li>NSFAS applications</li>
+                    <li>CAO applications</li>
+                    <li>TVET College applications</li>
+                    <li>Exam prayer sessions along with attainable "Exam care packages" for learners.</li>
+                </ul>
+            
+                <h3>Long Term Goals of S.E.E.</h3>
+                <ul>
+                    <li>Academic camps with tutors</li>
+                    <li>Safe transportation of learners to and from academic camps.</li>
+                    <li>Efficient Cross-night programmes.</li>
+                    <li>Computer/Digital Literacy Programme.</li>
+                    <li>Sports Tournaments.</li>
+                    <li>Learnerships.</li>
+                </ul>
+            
+                <h3>Important Reviews:</h3>
+                <ul>
+                    <li>Registration</li>
+                    <li>Domain</li>
+                    <li>Contact details</li>
+                    <li>Physical and Postal address</li>
+                    <li>Company Bank Account</li>
+                    <li>Sponsors</li>
+                    <li>Web development and social media account.</li>
+                </ul>
+            
+                <h3>Rules of S.E.E.</h3>
+                <ul>
+                    <li>Respect and discipline.</li>
+                    <li>No profanity.</li>
+                    <li>No romantic relationships between board members.</li>
+                    <li>Release of a member will follow after 3 events of noncompliance with any of the rules.</li>
+                    <li>Monthly Membership fees are compulsory.</li>
+                    <li>Misuse of authority is not allowed.</li>
+                    <li>Prior notice of unavailability to any of the monthly online meetings is mandatory.</li>
+                    <li>No secret dealings are allowed, every detail should be on the table for all board members to be aware of.</li>
+                    <li>No foul gossiping and bad mouthing.</li>
+                </ul>
+            
+                <p><strong>Membership Fee:</strong> R50 every month (you are welcome to be generous)</p>
+                <p><strong>Payable:</strong> From the 1st to the 5th of every month (unless other arrangements are communicated with the CFO/Treasurer)</p>
+            </div>
+        </div>
+            
+
+        <div class="doc-item">
+            <div class="doc-title">
+                <span>N.P.O document</span>
+                <button class="toggle-btn" onclick="toggleDocument(this)">Show</button>
+            </div>
+            <div class="doc-content">
+                <strong>Non-Profit Company: Sandanezwe Embodiment of Excellence (S.E.E)</strong>
+                
+                <strong>Purpose:</strong>
+                <p>To develop the Sandanezwe rural area in KwaZulu-Natal, South Africa.</p>
+                
+                <strong>Constitution (for Voluntary Associations):</strong>
+                <p>Outlines objectives, membership criteria, and governance processes.</p>
+                
+                <strong>Memorandum of Incorporation (MOI) (for NPCs):</strong>
+                <p>Details the organization’s objectives and governance structure.</p>
+                
+                <hr />
+                
+                <strong>Vision:</strong>
+                <p>“To be a leading youth development organization, recognized for our innovative programs, passionate team, and commitment to empowering young people. We envision a future where all young people have access to opportunities, resources, and support to thrive and reach their full potential.”</p>
+                
+                <strong>Mission:</strong>
+                <p>“To provide a supportive and inclusive environment where young people can develop their skills, build their confidence, and unlock their full potential. We strive to foster a sense of belonging, promote social responsibility, and encourage young people to become active contributors to their communities.”</p>
+                
+                <strong>Slogan:</strong>
+                <p>“Ye are the light of the world, a chosen generation.”</p>
+                
+                <strong>Logo:</strong>
+                <p>The eagle, symbolizing majestic and incomparable qualities.</p>
+                
+                <hr />
+                
+                <strong>Short-Term Goals:</strong>
+                <ul>
+                    <li>NSFAS applications.</li>
+                    <li>CAO applications.</li>
+                    <li>TVET College applications.</li>
+                    <li>Exam prayer sessions with “Exam Care Packages” for learners.</li>
+                </ul>
+                
+                <strong>Long-Term Goals:</strong>
+                <ul>
+                    <li>Academic camps with tutors.</li>
+                    <li>Safe transportation of learners.</li>
+                    <li>Cross-night programs.</li>
+                    <li>Computer/Digital Literacy Programs.</li>
+                    <li>Sports tournaments.</li>
+                    <li>Learnerships.</li>
+                </ul>
+                
+                <hr />
+                
+                <strong>Important Actions:</strong>
+                <ul>
+                    <li>Registration of the organization.</li>
+                    <li>Domain acquisition and web development.</li>
+                    <li>Establishment of contact details, physical and postal addresses.</li>
+                    <li>Opening a company bank account.</li>
+                    <li>Securing sponsors.</li>
+                    <li>Management of social media accounts.</li>
+                </ul>
+                
+                <hr />
+                
+                <strong>Rules of S.E.E:</strong>
+                <ol>
+                    <li>Respect and discipline are mandatory.</li>
+                    <li>No profanity.</li>
+                    <li>No romantic relationships between board members.</li>
+                    <li>Non-compliance with rules allows for three warnings before dismissal.</li>
+                    <li>Monthly membership fees are compulsory.</li>
+                    <li>Misuse of authority is prohibited.</li>
+                    <li>Members must provide prior notice of unavailability for online meetings.</li>
+                    <li>Transparency is required; no secret dealings allowed.</li>
+                    <li>Gossiping and bad-mouthing are prohibited.</li>
+                </ol>
+                
+                <strong>Membership Fee:</strong>
+                <p>- R50 per month (generous contributions are welcome).</p>
+                <p>- Payable from the 1st to the 5th of each month (alternate arrangements can be made with the CFO/Treasurer).</p>
+                
+                <hr />
+                
+                <strong>Leadership Structure:</strong>
+                <ul>
+                    <li><strong>Founder & Chairperson:</strong> Samukelisiwe Mthembu</li>
+                    <li><strong>Websites & Social Media:</strong> Avuyile Mthembu</li>
+                    <li><strong>Board Members:</strong>
+                        <ul>
+                            <li>Busiswa Mthembu</li>
+                            <li>Khethelo Mthembu</li>
+                            <li>Masithembele Mthembu</li>
+                            <li>Sphilangezwi Nxele</li>
+                            <li>Sfiso Mtolo</li>
+                            <li>Mxolelwa Mthembu</li>
+                            <li>Mbali Mhlane</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <hr />
+                
+                <strong>Financial Summary:</strong>
+                <p>🔵As of Tuesday, 14 January 2025, the balance is <strong>R556</strong></p>
+                <p>As of Wednesday, 8 January 2025, the balance is <strong>R490,</strong> R350 from membership fees + R140 from donations.</p>
+                
+                <hr />
+                
+                <strong>Business Initiatives:</strong>
+                <ul>
+                    <li>Acquisition of a female goat for sustainable income generation.</li>
+                    <li>Securing a location for goat residency.</li>
+                </ul>
+                
+                <strong>Progress:</strong>
+                <ul>
+                    <li>A male goat has been identified for mating purposes.</li>
+                    <li>Awaiting confirmation for goat residency.</li>
+                    <li>Company name finalized: <strong>‘Beacon of Excellence’</strong>.</li>
+                </ul>
+                
+                <hr />
+                
+                <strong>Board Meetings:</strong>
+                
+                <p><strong>First Board Meeting:</strong><br />
+                <strong>Date:</strong> 30 December 2024<br />
+                <strong>Venue:</strong> Mthembu (KwaMaMkhwanazi)<br />
+                <strong>Members Present:</strong> All listed board members.<br />
+                <strong>Key Discussions:</strong> Vision, mission, logo, goals, business ideas, rules, positions, and roles.</p>
+                
+                <p><strong>Second Board Meeting:</strong><br />
+                <strong>Date:</strong> 02 January 2025<br />
+                <strong>Venue:</strong> Mthembu (KwaMaMkhwanazi)<br />
+                <strong>Key Outcomes:</strong>
+                <ul>
+                    <li>Dismissal of Andiswa Duma as a board member.</li>
+                    <li>New rule: Members who leave take no organizational resources.</li>
+                    <li>Meeting duration standardized to 2 hours (online via Zoom).</li>
+                    <li>Next meeting: 01 February 2025, at 8 PM.</li>
+                </ul>
+                </p>
+                
+                <hr />
+                
+                <strong>Christian Foundation:</strong>
+                <p>S.E.E. is grounded in Christianity, putting God at the forefront of all its endeavors.</p>
+                
+                <hr />
+                
+                <strong>Resources for NPO Registration:</strong>
+
+                <ul>
+                    <li><a href="https://www.gov.za/services/register-nonprofit-organisation">South African Government NPO Registration</a></li>
+                    <li><a href="https://www.cipc.co.za/?page_id=2132">CIPC NPC Information</a></li>
+                    <li><a href="https://www.dsd.gov.za/index.php/documents/category/76-npo-forms">DSD NPO Forms</a></li>
+                    <li><a href="https://www.npo.gov.za/">NPO registration</a></li>
+                </ul>
+                
+                <hr/>
+                
+                <strong>Message:</strong>
+                <p>We are the youth and future of Sandanezwe. Through dedication and innovation, we aim to uplift and empower our community.</p>
+            </div>
+        </div>
+
+
+        <div class="doc-item">
+            <div class="doc-title">
+                <span>Board Members and Positions</span>
+                <button class="toggle-btn" onclick="toggleDocument(this)">Show</button>
+            </div>
+            <div class="doc-content">
+                <ul>
+                    <li><strong>Founder & Chairperson:</strong> Samukelisiwe Mthembu</li>
+                    <li><strong>Websites & Social Media:</strong> Avuyile Mthembu</li>
+                    <li><strong>CFO / Treasurer:</strong> Busiswa Mthembu</li>
+                    <li><strong>Secretary:</strong> Mbali Mhlane</li>
+                    <li>Khethelo Mthembu</li>
+                    <li>Masithembele Mthembu</li>
+                    <li>Sphilangezwi Nxele</li>
+                    <li>Sfiso Mtolo</li>
+                    <li>Mxolelwa Mthembu</li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    
+    </div>
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleDocument(button) {
+            const content = button.parentElement.nextElementSibling;
+            const isShowing = content.style.display === 'block';
+            content.style.display = isShowing ? 'none' : 'block';
+            button.textContent = isShowing ? 'Show' : 'Hide';
+        }
+    </script>
+</body>
+
+</html>

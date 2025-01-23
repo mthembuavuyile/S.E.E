@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Sandanezwe Embodiment of Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
+            --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            --text-color: #fff;
+            --accent-color: #ffd700;
+            --bg-color: #000;
+            --card-bg: rgba(255,215,0,0.05);
+            --card-border: rgba(255,215,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: var(--secondary-gradient);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .team-member:hover::before {
+            opacity: 0.05;
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-avatar i {
+            font-size: 3rem;
+            color: var(--bg-color);
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links a {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #FFA500;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .member-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .member-name {
+                font-size: 1.2rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-member {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .team-member:nth-child(1) { animation-delay: 0.1s; }
+        .team-member:nth-child(2) { animation-delay: 0.2s; }
+        .team-member:nth-child(3) { animation-delay: 0.3s; }
+        .team-member:nth-child(4) { animation-delay: 0.4s; }
+        .team-member:nth-child(5) { animation-delay: 0.5s; }
+        .team-member:nth-child(6) { animation-delay: 0.6s; }
+        .team-member:nth-child(7) { animation-delay: 0.7s; }
+        .team-member:nth-child(8) { animation-delay: 0.8s; }
+        .team-member:nth-child(9) { animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Our Team</h1>
+            <p>Meet the dedicated individuals behind Sandanezwe Embodiment of Excellence</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Samukelisiwe Mthembu</h2>
+                <p class="member-role">Chairperson & Founder</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Avuyile Mthembu</h2>
+                <p class="member-role">Web Developer & Social Media Manager</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Sfiso Mtolo</h2>
+                <p class="member-role">Deputy Chairperson</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Busiswa Mthembu</h2>
+                <p class="member-role">CFO & Treasurer</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Mbali Mhlane</h2>
+                <p class="member-role">Secretary</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Khethelo Mthembu</h2>
+                <p class="member-role">Events Planner</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Masithembele Mthembu</h2>
+                <p class="member-role">Content Creator</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Sphilangezwi Nxele</h2>
+                <p class="member-role">Area Information Connector</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+    
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="member-name">Mxolelwa Mthembu</h2>
+                <p class="member-role">Office Admin</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

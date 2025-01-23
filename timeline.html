@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.E. | Sandanezwe Embodiment of Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Properties */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
+            --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            --text-color: #fff;
+            --accent-color: #ffd700;
+            --bg-color: #000;
+            --card-bg: rgba(255,215,0,0.05);
+            --card-border: rgba(255,215,0,0.1);
+        }
+
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-burger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .burger-line {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 100px 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.2);
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item p {
+            background: rgba(255,215,0,0.05);
+            padding: 1rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item p:hover {
+            transform: translateX(10px);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--secondary-gradient);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-burger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0,0,0,0.95);
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .timeline h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#home" aria-label="Go to homepage">
+                <img src="assets/images/s.e.e-logo-transparent.png" alt="S.E.E Logo" class="logo">
+            </a>
+
+            <button class="nav-burger" aria-label="Toggle navigation menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="timeline" id="timeline">
+            <h2>Timeline of Events</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">December 27, 2024</div>
+                <p>The initial communication was established via the WhatsApp group, marking the beginning of our journey.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">December 30, 2024</div>
+                <p>We held our first-ever meeting, setting the foundation for future collaborations.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">January 2, 2025</div>
+                <p>The second meeting was conducted, serving as the inaugural gathering for the year 2025.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">January 6th, 2025</div>
+                <p>S.E.E. first event at a community hall</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">January 20, 2025</div>
+                <p>Online meeting regarding npo/npc registration.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 S.E.E. Youth Empowerment. All rights reserved.</p>
+        <br>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navBurger = document.querySelector('.nav-burger');
+        const navMenu = document.querySelector('nav ul');
+
+        navBurger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-burger') && !e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

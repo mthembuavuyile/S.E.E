@@ -61,7 +61,7 @@
     <header class="header">
         <div class="container">
             <a href="#home" aria-label="Go to homepage">
-                <img src="assets/images/s.e.e-logo.png" alt="S.E.E Logo" class="logo">
+                <img src="assets/images/s.e.e-logo-transparent.png" alt="S.E.E Logo" class="logo">
             </a>
 
             <button class="nav-burger" aria-label="Toggle navigation menu">
@@ -201,11 +201,11 @@
                 </div>
                 <div class="footer-links">
                     <ul>
-                        <li><a href="/about" class="footer-link" title="About Us">About</a></li>
-                        <li><a href="/team" class="footer-link" title="Our Team">Team</a></li>
-                        <li><a href="/services" class="footer-link" title="Our Services">Services</a></li>
-                        <li><a href="/contact" class="footer-link" title="Contact Us">Contact</a></li>
-                        <li><a href="/privacy-policy" class="footer-link" title="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="about.html" class="footer-link" title="About Us">About</a></li>
+                        <li><a href="team.html" class="footer-link" title="Our Team">Team</a></li>
+                        <li><a href="services.html" class="footer-link" title="Our Services">Services</a></li>
+                        <li><a href="contact.htm" class="footer-link" title="Contact Us">Contact</a></li>
+                        <li><a href="sitemap.html" class="footer-link" title="Privacy Policy">Sitemap</a></li>
                         <li><a href="/terms" class="footer-link" title="Terms & Conditions">Terms & Conditions</a></li>
                     </ul>
                 </div>
@@ -228,48 +228,7 @@
     </footer>
     
 
-    <script>
-        const burger = document.querySelector('.nav-burger');
-        const nav = document.querySelector('nav');
-        const burgerLines = document.querySelectorAll('.burger-line');
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            burgerLines.forEach(line => line.classList.toggle('active'));
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-       // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
-
-      // Intersection Observer for fade-in animations
-       const observer = new IntersectionObserver((entries) => {
-           entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-       });
-
-        document.querySelectorAll('section').forEach((section) => {
-           section.style.opacity = 0;
-           section.style.transform = 'translateY(50px)';
-            section.style.transition = 'all 0.5s ease-out';
-           observer.observe(section);
-       });
-    </script>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

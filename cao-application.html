@@ -317,6 +317,13 @@
         }
 
         /* Example Box */
+
+        .example-box pre {
+    white-space: pre-wrap;      /* Allows wrapping */
+    word-break: break-word;     /* Ensures long words/URLs don't overflow */
+    overflow-wrap: break-word;  /* Fallback for older browsers */
+}
+
         .example-box {
             background: #f8f9fa;
             border: 1px solid #ddd;

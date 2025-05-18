@@ -57,6 +57,7 @@
             background-color: var(--bg-color);
             line-height: 1.6;
             color: var(--text-color);
+            overflow-x: hidden; /* Prevent horizontal scroll on mobile */
         }
 
         /* Header Styles */
@@ -78,22 +79,19 @@
         }
 
         .logo img {
-            height: 40px;
-            /* Smaller logo */
+            height: 40px; /* Smaller logo */
             margin-right: 0.75rem;
         }
 
         .logo-text h1 {
-            font-size: 1.1rem;
-            /* Smaller heading */
+            font-size: 1.1rem;  /* Smaller heading */
             font-weight: 600;
             margin: 0;
             line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 0.75rem;
-            /* Smaller subtext */
+            font-size: 0.75rem;  /* Smaller subtext */
             opacity: 0.7;
         }
 
@@ -123,12 +121,11 @@
         .hero {
             position: relative;
             color: white;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem; /* Desktop padding */
             text-align: center;
             overflow: hidden;
         }
 
-        /* Blurred background using ::before */
         .hero::before {
             content: "";
             position: absolute;
@@ -141,13 +138,10 @@
             background-blend-mode: overlay;
             filter: blur(8px);
             transform: scale(1.1);
-            /* Prevent edge clipping from blur */
             z-index: 0;
             opacity: 0.9;
-            /* Optional for better text contrast */
         }
 
-        /* Keep content above the blurred background */
         .hero>* {
             position: relative;
             z-index: 1;
@@ -163,8 +157,7 @@
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto;
-            margin-bottom: 2rem;
+            margin: 0 auto 2rem;
         }
 
         .announcement {
@@ -185,7 +178,7 @@
         .container {
             max-width: 1200px;
             margin: 3rem auto;
-            padding: 0 2rem;
+            padding: 0 2rem; /* Desktop padding */
         }
 
         .section-title {
@@ -347,7 +340,7 @@
             position: relative;
             max-width: 800px;
             margin: 3rem auto;
-            padding: 2rem 0;
+            padding: 2rem 0; /* Desktop padding */
         }
 
         .timeline::before {
@@ -518,7 +511,7 @@
         }
 
         .faq-question::after {
-            content: '\f107';
+            content: '\f107'; /* Font Awesome Angle Down */
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             transition: transform 0.3s ease;
@@ -548,7 +541,7 @@
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 2rem; /* Desktop padding */
         }
 
         .footer-content {
@@ -648,54 +641,6 @@
             color: var(--accent-color);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 50px;
-                padding-right: 0;
-            }
-
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: -30px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .logo {
-                margin-bottom: 1rem;
-            }
-        }
 
         /* Mobile menu */
         .mobile-menu-btn {
@@ -705,30 +650,6 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #000;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-                position: absolute;
-                top: 1.5rem;
-                right: 1.5rem;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
         }
 
         /* Custom logo */
@@ -755,6 +676,160 @@
 
         .fade-in {
             animation: fadeIn 1s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding-left: 1rem; /* Keep some padding for header content */
+                padding-right: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.5rem; /* Adjust if header padding changes significantly */
+                right: 1.5rem; /* Adjust if header padding changes significantly */
+            }
+
+            nav ul { /* Default mobile nav setup from original */
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            /* ===== NEW MOBILE FULL-WIDTH STYLES ===== */
+
+            /* 1. Make main content containers full-width for cards within them */
+            .container, /* Primary wrapper for card sections */
+            .hero, /* For hero background and full-width announcement */
+            .timeline /* Main timeline container for full-width items */
+            {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 100%; /* Ensure it spans full screen width */
+            }
+
+            /* Text content within hero (not cards) might need its own padding */
+            .hero h1, 
+            .hero p:not(.announcement p) { /* Target hero's direct p, not p inside .announcement */
+                padding-left: 1rem; 
+                padding-right: 1rem;
+            }
+
+            /* 2. Style cards to be full-width and edge-to-edge */
+            .step-card,
+            .info-box, .warning-box, .success-box,
+            .example-box,
+            .timeline-content, /* Content box within each timeline item */
+            .details-section,
+            .cta-section,
+            .announcement, /* Card in hero */
+            .checklist-item /* Individual items in a checklist */
+            {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                border-radius: 0 !important; /* Sharp edges for full-width */
+                width: 100% !important; /* Takes full width of its parent */
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Specific border adjustments for edge-to-edge look */
+            .example-box, .announcement { /* Cards that have a full border */
+                border-left-width: 0 !important;
+                border-right-width: 0 !important;
+                /* Keeps top/bottom borders defined in their original rules */
+            }
+            /* .info-box, .warning-box, .success-box keep their border-left by default. */
+            /* .step-card keeps its border-top by default. */
+            
+            /* 3. Adjust internal padding for cards on mobile */
+            .step-card { padding: 1.5rem 1rem; }
+            .info-box, .warning-box, .success-box { padding: 1rem 1rem; }
+            .example-box { padding: 1rem 1rem; }
+            .timeline-content { padding: 1rem 1rem; }
+            .details-section { padding: 1.5rem 1rem; }
+            .cta-section { padding: 2rem 1rem; text-align: center;}
+            .announcement { padding: 1rem 1rem; }
+            .checklist-item { padding: 0.75rem 1rem; }
+
+            /* 4. Adjust grid containers for cards */
+            .steps-container,
+            .checklist,
+            .details-list /* Grid inside details-section */
+            {
+                grid-template-columns: 1fr; /* Stack items */
+                gap: 1rem 0; /* Vertical gap, no horizontal */
+                padding-left: 0; /* Ensure grid container itself is edge-to-edge */
+                padding-right: 0;
+            }
+            .checklist { gap: 0.5rem 0; }
+
+            /* 5. Timeline adjustments (original mobile styles adapted) */
+            .timeline::before { /* Original mobile: */
+                left: 20px; 
+                /* transform: translateX(0); Remove translateX if left is fixed */
+            }
+            .timeline-item { /* Original mobile: */
+                width: 100%;
+                padding-left: 40px; /* Space for line (20px) + gap (20px) */
+                padding-right: 1rem; /* Breathing room on the right */
+                margin-left: 0; /* Override desktop 50% margin for even items */
+            }
+            .timeline-item:nth-child(even) { /* Already handled by width 100% & margin-left 0 */
+                margin-left: 0;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after { /* Original mobile: */
+                left: -30px; /* Adjust if dot size or line position changes */
+                /* This positions the dot relative to the timeline-content box.
+                   If line is at 20px from edge, content starts at 40px.
+                   Dot needs to be 20px left of content edge + half its width to center on line.
+                   If dot is 20px wide, -20px -10px = -30px. This should work.
+                */
+            }
+            
+            /* 6. Footer content padding */
+            .footer-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            /* 7. Contact info stacking */
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            /* ===== END OF NEW MOBILE FULL-WIDTH STYLES ===== */
         }
     </style>
 </head>

@@ -9,9 +9,8 @@
         content="Complete guide to applying for universities through the Central Applications Office (CAO) in KwaZulu-Natal for 2026 entry. Includes step-by-step instructions with S.E.E sponsorship information.">
     <meta name="keywords"
         content="CAO application, 2026 university application, KZN universities, S.E.E, Sandanezwe Embodiment of Excellence, university sponsorship, CAO guide, UKZN application, DUT application, MUT application, UNIZULU application">
-    <!-- It's good practice to host critical CSS like Font Awesome locally or use SVGs for icons for better performance and reliability -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="https://sandanezweexcellence.co.za/assets/images/s.e.e-logo-transparent.png" type="image/png"> <!-- Example Favicon -->
+    <link rel="icon" href="https://sandanezweexcellence.co.za/assets/images/s.e.e-logo-transparent.png" type="image/png">
 
     <script type="application/ld+json">
     {
@@ -24,36 +23,43 @@
         "sameAs": [
             "https://www.facebook.com/SandanezweExcellence",
             "https://www.instagram.com/sandanezwe_excellence/"
-            // Add other official social media links here if available
         ],
         "description": "Transforming lives through education, leadership training, and community development in the Sandanezwe Rural Area.",
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "ZA", // Using ISO 3166-1 alpha-2 country code
+            "addressCountry": "ZA",
             "addressRegion": "KwaZulu-Natal",
             "addressLocality": "Sandanezwe Rural Area"
         },
-        "contactPoint": { // Added contact point for better schema
+        "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+27-64-878-4287", // E.164 format
-            "contactType": "customer support", // Or "general enquiry"
+            "telephone": "+27-64-878-4287",
+            "contactType": "customer support",
             "email": "info@sandanezweexcellence.co.za"
         }
     }
     </script>
     <style>
-        /* Custom Properties */
         :root {
-            --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
-            --secondary-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+            --primary-color: #ffc107;
+            --primary-dark: #ff9800;
+            --secondary-color: #4a148c;
+            --secondary-light: #7c43bd;
+            --accent-color: #ff5722;
             --text-color: #333;
-            --accent-color: #ffd700; /* Ensure sufficient contrast with background */
-            --bg-color: #f5f5f5;
-            --card-bg: #fff;
-            --card-border: rgba(0, 0, 0, 0.1);
-            --highlight: #ff6b00; /* Ensure sufficient contrast */
+            --text-light: #666;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+            --gray-bg: #f0f0f0;
             --success: #28a745;
             --warning: #ffc107;
+            --danger: #dc3545;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --section-padding: 60px 0;
+            --container-padding: 0 20px;
         }
 
         * {
@@ -63,163 +69,192 @@
         }
 
         html {
-            scroll-behavior: smooth; /* For anchor link scrolling */
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
             line-height: 1.6;
             color: var(--text-color);
-            overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
         }
 
         /* Header Styles */
         header {
-            background: var(--primary-gradient);
-            color: #000; /* Ensure contrast for text on gradient */
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* Make header sticky */
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            position: relative;
             top: 0;
-            z-index: 1000; /* Ensure header is above other content */
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            padding: 15px 20px;
         }
 
         .logo {
-            display: flex; /* Align logo image and text */
+            display: flex;
             align-items: center;
+            text-decoration: none;
+            color: var(--white);
         }
 
         .logo img {
             height: 40px;
-            margin-right: 0.75rem;
-            /* Add border or shadow if logo blends with background */
+            margin-right: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
         }
 
         .logo-text h1 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
+            color: var(--white);
             margin: 0;
-            line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 0.75rem;
-            opacity: 0.8; /* Slightly increased opacity for readability */
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            opacity: 0.9;
         }
 
-
-        /* Nav Styles */
-        #main-nav-ul { /* Added ID for ARIA control */
+        #main-nav-ul {
             display: flex;
             list-style: none;
-        }
-
-        #main-nav-ul li {
-            margin-left: 1.5rem;
+            gap: 25px;
         }
 
         #main-nav-ul li a {
-            color: #000; /* Ensure contrast */
+            color: var(--white);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease; /* Simpler transition */
-            padding: 0.5rem 0; /* Add some padding for easier clicking */
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
         }
 
-        #main-nav-ul li a:hover,
-        #main-nav-ul li a:focus { /* Added focus style for accessibility */
-            color: #fff;
-            outline: 2px solid #fff; /* Example focus style */
-            outline-offset: 2px;
+        #main-nav-ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        #main-nav-ul li a:hover, #main-nav-ul li a:focus {
+            color: var(--primary-color);
+        }
+
+        #main-nav-ul li a:hover::after, #main-nav-ul li a:focus::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
             position: relative;
-            color: white;
-            padding: 4rem 2rem;
+            padding: 100px 20px;
             text-align: center;
-            overflow: hidden; /* Contains the pseudo-element */
-            /* Consider adding a min-height for better visual balance */
+            color: var(--white);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://media.istockphoto.com/id/1988188005/photo/university-student-woman-and-outdoor-for-graduation-with-memory-smile-or-thinking-or.jpg?s=612x612&w=0&k=20&c=cFtjo-drm6_nxczm3E62TfVp7B7J6oMauvMCsuBNoN8=') no-repeat center center/cover;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            /* User-provided image. Ensure licensing and optimize for web. */
-            /* For performance, consider a smaller, pre-blurred image or a CSS gradient as fallback. */
-            background: var(--secondary-gradient),
-                url('https://media.istockphoto.com/id/1988188005/photo/university-student-woman-and-outdoor-for-graduation-with-memory-smile-or-thinking-or.jpg?s=612x612&w=0&k=20&c=cFtjo-drm6_nxczm3E62TfVp7B7J6oMauvMCsuBNoN8=') no-repeat center center/cover;
-            background-blend-mode: overlay;
-            filter: blur(8px); /* Blur can be resource-intensive */
-            transform: scale(1.1); /* Ensure blur doesn't leave edges */
-            z-index: 0;
-            opacity: 0.9;
-        }
-
-        .hero > * { /* Direct children of hero */
-            position: relative;
-            z-index: 1;
-        }
-
 
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--primary-color);
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .announcement {
-            background-color: rgba(255, 215, 0, 0.2); /* Check contrast of text on this */
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 1.5rem;
+            background-color: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 30px;
+            backdrop-filter: blur(5px);
         }
 
         .announcement h2 {
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover, .cta-btn:focus {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--section-padding);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 40px;
             position: relative;
         }
 
         .section-title h2 {
             font-size: 2rem;
+            color: var(--secondary-color);
             display: inline-block;
-            background-color: var(--bg-color); /* To cover the line */
-            padding: 0 1rem;
-            color: var(--highlight);
+            padding: 0 15px;
+            background: var(--light-bg);
             position: relative;
             z-index: 1;
         }
@@ -229,7 +264,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background-color: var(--card-border);
+            background-color: rgba(0, 0, 0, 0.1);
             left: 0;
             top: 50%;
             z-index: 0;
@@ -239,72 +274,51 @@
         .steps-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
-        .full-width { /* Utility class for grid items spanning full width */
+        .full-width {
             grid-column: 1 / -1;
         }
 
-        .step-card { /* Can be <article> or <div> */
-            background: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--accent-color);
+        .step-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            padding: 30px;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+            height: 100%;
         }
 
         .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         .step-card h3 {
             font-size: 1.4rem;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
             display: flex;
             align-items: center;
-            color: var(--highlight);
+            gap: 12px;
         }
 
         .step-card h3 i {
-            margin-right: 0.8rem;
+            color: var(--primary-color);
             font-size: 1.6rem;
-            /* Gradient text can have accessibility issues if not done carefully */
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .step-card p,
-        .step-card ul,
-        .step-card ol { /* Added ol */
-            margin-bottom: 1rem;
-        }
-
-        .step-card ul,
-        .step-card ol {
-            padding-left: 1.5rem; /* Default browser padding for lists */
-        }
-
-        .step-card ul li,
-        .step-card ol li {
-            margin-bottom: 0.5rem;
         }
 
         /* Info Boxes */
         .info-box {
-            background-color: rgba(255, 215, 0, 0.1);
-            border-left: 4px solid var(--accent-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 5px;
+            background-color: rgba(74, 20, 140, 0.05);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
         }
-        .info-box h3 i, .info-box h4 i { margin-right: 0.5em; }
-
 
         .warning-box {
             background-color: rgba(255, 193, 7, 0.1);
@@ -316,65 +330,77 @@
             border-left: 4px solid var(--success);
         }
 
+        .info-box h3, .info-box h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .warning-box h3, .warning-box h4 {
+            color: #856404;
+        }
+
+        .success-box h3, .success-box h4 {
+            color: #155724;
+        }
+
         /* Example Box */
-
-        .example-box pre {
-    white-space: pre-wrap;      /* Allows wrapping */
-    word-break: break-word;     /* Ensures long words/URLs don't overflow */
-    overflow-wrap: break-word;  /* Fallback for older browsers */
-}
-
         .example-box {
             background: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: 'Courier New', Courier, monospace; /* Explicit monospace */
-            white-space: pre-wrap; /* Keep newlines */
-            word-wrap: break-word; /* Prevent overflow */
+            border: 1px solid #dee2e6;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .example-box pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            font-size: 0.9rem;
         }
 
         .copy-btn {
             display: inline-block;
-            background: var(--primary-gradient);
-            color: #000; /* Check contrast */
+            background: var(--primary-color);
+            color: var(--dark-bg);
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
             font-weight: 600;
             cursor: pointer;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            transition: var(--transition);
         }
 
-        .copy-btn:hover,
-        .copy-btn:focus {
+        .copy-btn:hover, .copy-btn:focus {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            outline: 2px solid var(--highlight); /* Focus style */
         }
 
         /* Checklist */
         .checklist {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
         }
 
         .checklist-item {
             display: flex;
             align-items: center;
-            background: var(--card-bg);
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            background: var(--white);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            gap: 10px;
         }
 
         .checklist-item i {
             color: var(--success);
-            margin-right: 0.8rem;
             font-size: 1.2rem;
         }
 
@@ -382,23 +408,23 @@
         .timeline {
             position: relative;
             max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem 0;
+            margin: 50px auto;
+            padding: 30px 0;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
             width: 4px;
-            background: var(--accent-color);
+            background: var(--primary-color);
             top: 0;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        .timeline-item { /* Can be <article> */
-            padding: 0 2rem 2rem; /* Adjusted padding */
+        .timeline-item {
+            padding: 0 30px 30px;
             position: relative;
             width: 50%;
         }
@@ -408,174 +434,159 @@
         }
 
         .timeline-content {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--card-shadow);
             position: relative;
         }
 
-        .timeline-content::after { /* Decorative dot on timeline */
+        .timeline-content::after {
             content: '';
             position: absolute;
             width: 20px;
             height: 20px;
-            background: var(--accent-color); /* Or var(--card-bg) with border var(--accent-color) */
-            border: 3px solid var(--bg-color); /* Makes dot appear on top of line */
+            background: var(--primary-color);
+            border: 3px solid var(--white);
             top: 50%;
             border-radius: 50%;
             transform: translateY(-50%);
-            z-index: 1; /* Ensure dot is above the line */
+            z-index: 1;
         }
 
         .timeline-item:nth-child(odd) .timeline-content::after {
-            right: -30px; /* Adjust based on dot size and desired position */
+            right: -36px;
         }
 
         .timeline-item:nth-child(even) .timeline-content::after {
-            left: -30px; /* Adjust based on dot size and desired position */
+            left: -36px;
         }
 
         .timeline-date {
             font-weight: bold;
-            color: var(--highlight);
-            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
         }
 
         /* Details/Form Fields Section */
         .details-section {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
         }
 
         .details-section h3 {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--highlight);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
         }
 
         .details-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 25px;
         }
 
         .details-column h4 {
-            margin-bottom: 1rem;
-            color: var(--highlight); /* Check contrast */
+            margin-bottom: 15px;
+            color: var(--secondary-color);
         }
 
         .details-list ul {
-            list-style-type: none; /* Custom bullets below */
-            padding-left: 0; /* Reset padding for custom bullets */
+            list-style-type: none;
+            padding-left: 0;
         }
 
         .details-list ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             position: relative;
-            padding-left: 1.5rem; /* Space for custom bullet */
+            padding-left: 20px;
         }
 
         .details-list ul li::before {
-            content: "•"; /* Or use Font Awesome icon */
-            color: var(--accent-color);
+            content: "•";
+            color: var(--primary-color);
             font-weight: bold;
             position: absolute;
             left: 0;
-            top: 0; /* Adjust if line-height causes misalignment */
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--primary-gradient);
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 60px 30px;
             text-align: center;
-            border-radius: 10px;
-            margin: 3rem 0;
+            border-radius: var(--border-radius);
+            margin: 50px 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: var(--dark-bg);
         }
 
         .cta-section h2 {
-            color: #000; /* Check contrast */
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             font-size: 2rem;
         }
 
         .cta-section p {
             max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #000; /* Check contrast */
+            margin: 0 auto 30px;
             font-size: 1.1rem;
         }
 
-        .cta-btn {
-            display: inline-block;
-            background: #000;
-            color: #fff; /* Good contrast */
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        .cta-section .cta-btn {
+            background: var(--dark-bg);
+            color: var(--white);
         }
 
-        .cta-btn:hover,
-        .cta-btn:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            outline: 2px solid var(--accent-color); /* Focus style */
-            outline-offset: 2px;
+        .cta-section .cta-btn:hover, .cta-section .cta-btn:focus {
+            background: #000;
         }
 
         /* FAQ Section */
         .faq-section {
-            margin: 3rem 0;
+            margin: 50px 0;
         }
 
-        .faq-item { /* Can be <article> */
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 1.5rem;
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
         }
+
         .faq-item:last-child {
-            border-bottom: none; /* Remove border from last item */
+            border-bottom: none;
         }
 
-
-        .faq-question { /* This will be a <button> for accessibility */
+        .faq-question {
             font-weight: 600;
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--highlight);
+            margin-bottom: 10px;
+            color: var(--secondary-color);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%; /* Make button full width */
-            background: none; /* Remove default button styles */
+            width: 100%;
+            background: none;
             border: none;
             padding: 0;
-            text-align: left; /* Align text left */
+            text-align: left;
+            transition: var(--transition);
         }
 
-        .faq-question:hover,
-        .faq-question:focus {
-            color: var(--text-color); /* Example hover/focus */
-            outline: 2px solid var(--highlight);
-            outline-offset: 2px;
+        .faq-question:hover, .faq-question:focus {
+            color: var(--accent-color);
         }
 
-        .faq-question .icon::before { /* Using a span with class for icon */
-            content: '\f107'; /* Font Awesome Angle Down */
-            font-family: 'Font Awesome 6 Free'; /* Corrected Font Awesome family */
+        .faq-question .icon::before {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             transition: transform 0.3s ease;
-            display: inline-block; /* Allows transform */
+            display: inline-block;
         }
 
         .faq-question[aria-expanded="true"] .icon::before {
@@ -583,73 +594,69 @@
         }
 
         .faq-answer {
-            display: none; /* Hidden by default, shown by JS */
-            padding-top: 1rem;
-            /* Removed .show class, JS will toggle display directly or add a class */
+            display: none;
+            padding-top: 15px;
+            color: var(--text-light);
         }
-
 
         /* Footer */
         footer {
-            background: #1a1a1a; /* Darker background for better contrast */
-            color: #f0f0f0; /* Lighter text for readability */
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
+            background: #212529;
+            color: #f5f5f5;
+            padding: 60px 0 20px;
+            margin-top: 60px;
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
             display: inline-block;
         }
 
         .footer-column ul {
             list-style: none;
-            padding-left: 0; /* Remove default padding */
         }
 
         .footer-column ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 10px;
         }
 
         .footer-column ul li a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
-        .footer-column ul li a:hover,
-        .footer-column ul li a:focus {
-            color: var(--accent-color);
+        .footer-column ul li a:hover, .footer-column ul li a:focus {
+            color: var(--primary-color);
             text-decoration: underline;
-            outline: none; /* Or a custom outline */
         }
 
         .footer-column p {
             color: #ccc;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
-            margin-top: 1rem;
-            gap: 0.8rem; /* Use gap for spacing */
+            margin-top: 15px;
+            gap: 12px;
         }
 
         .social-links a {
@@ -661,77 +668,67 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none; /* Ensure no underline */
+            transition: var(--transition);
+            text-decoration: none;
         }
-        .social-links a i { font-size: 1.1rem; } /* Adjust icon size */
 
-        .social-links a:hover,
-        .social-links a:focus {
-            background: var(--accent-color);
-            color: #000;
+        .social-links a i {
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover, .social-links a:focus {
+            background: var(--primary-color);
+            color: var(--dark-bg);
             transform: translateY(-3px);
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
         }
 
         .footer-bottom {
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
+            padding-top: 30px;
         }
 
         .footer-text {
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
             font-size: 0.9rem;
         }
 
         .footer-verse {
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-style: italic;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 20px;
+            margin-top: 15px;
             font-size: 0.9rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
+            gap: 8px;
         }
-        .contact-item a { color: inherit; text-decoration: none; }
-        .contact-item a:hover { color: var(--accent-color); text-decoration: underline;}
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
 
         .contact-item i {
-            margin-right: 0.5rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
-
-        /* Mobile menu button */
-        .mobile-menu-btn {
-            display: none; /* Hidden by default, shown in media query */
-            background: none;
-            border: none;
-            font-size: 1.8rem; /* Slightly larger for easier tapping */
-            cursor: pointer;
-            color: #000; /* Ensure contrast */
-            padding: 0.5rem; /* Clickable area */
-            line-height: 1; /* Prevent extra space */
-        }
-        .mobile-menu-btn:focus {
-            outline: 2px solid #000;
-            outline-offset: 2px;
-        }
-
-
-        /* Animation - simple fade-in */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -740,159 +737,96 @@
         .fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
-        /* Apply selectively via JS or to elements that should animate on load/scroll */
-        .animated-section {
-             opacity: 0; /* Start hidden if JS will add fade-in */
-        }
-
 
         /* Responsive Styles */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                align-items: flex-start; /* Align logo to start */
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding: 12px 15px;
             }
-            .logo {
-                margin-bottom: 1rem; /* Space between logo and potential nav */
+            
+            .logo-text h1 {
+                font-size: 1rem;
             }
-
-
+            
             .mobile-menu-btn {
                 display: block;
-                position: absolute; /* Position relative to header-container */
-                top: calc(1rem + 20px - 0.9rem); /* Align with logo center roughly: header_padding + logo_height/2 - button_fontsize/2 */
-                right: 1rem;
             }
-
+            
             #main-nav-ul {
-                display: none; /* Hidden by default on mobile */
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
                 flex-direction: column;
-                width: 100%;
-                text-align: center;
-                margin-top: 1rem; /* Space from logo/header content */
+                background: var(--secondary-color);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
-
-            #main-nav-ul.show { /* Class added by JS to show menu */
+            
+            #main-nav-ul.show {
                 display: flex;
             }
-
-            #main-nav-ul li {
-                margin: 0.5rem 0;
-                margin-left: 0; /* Reset desktop margin */
-            }
-             #main-nav-ul li a {
-                display: block; /* Make link take full width for easier tap */
-                padding: 0.75rem 1rem;
-            }
-
-
-            .hero { padding: 3rem 1rem; } /* Adjusted padding for mobile */
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-
-            /*
-                The following mobile styles use `!important` extensively.
-                While this achieves the desired full-width, edge-to-edge look on mobile,
-                it's generally better to achieve these overrides through higher specificity
-                or by structuring CSS mobile-first if possible in a full refactor.
-                For this revision, they are kept to maintain the visual intent.
-            */
-
-            .container,
-            .hero,
-            .timeline {
-                padding-left: 0;
-                padding-right: 0;
-                max-width: 100%;
-            }
-
-            .hero h1,
-            .hero p:not(.announcement p) {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-
-            .step-card,
-            .info-box, .warning-box, .success-box,
-            .example-box,
-            .timeline-content,
-            .details-section,
-            .cta-section,
-            .announcement,
-            .checklist-item {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                border-radius: 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box !important; /* Already global, but good reminder */
-            }
-
-            .example-box, .announcement {
-                border-left-width: 0 !important;
-                border-right-width: 0 !important;
+            
+            #main-nav-ul li a {
+                display: block;
+                padding: 10px 15px;
             }
             
-            .step-card { padding: 1.5rem 1rem; }
-            .info-box, .warning-box, .success-box { padding: 1rem 1rem; }
-            .example-box { padding: 1rem 1rem; }
-            .timeline-content { padding: 1rem 1rem; }
-            .details-section { padding: 1.5rem 1rem; }
-            .cta-section { padding: 2rem 1rem; text-align: center;}
-            .announcement { padding: 1rem 1rem; }
-            .checklist-item { padding: 0.75rem 1rem; }
-
-            .steps-container,
-            .checklist,
-            .details-list {
-                grid-template-columns: 1fr;
-                gap: 1rem 0;
-                padding-left: 0;
-                padding-right: 0;
+            .hero {
+                padding: 60px 15px;
+                min-height: 400px;
             }
-            .checklist { gap: 0.5rem 0; }
-
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            
             .timeline::before {
                 left: 20px;
-                transform: translateX(0); /* Simpler positioning */
-            }
-            .timeline-item {
-                width: 100%;
-                padding-left: 45px; /* Space for line and dot */
-                padding-right: 1rem;
-                margin-left: 0; /* Override desktop even item margin */
-            }
-            .timeline-item:nth-child(even) { margin-left: 0; }
-
-            .timeline-item .timeline-content::after { /* Single rule for all dots on mobile */
-                left: -10px; /* ( -(dot_width/2) - border_width_of_dot ) relative to the start of timeline-content's padding box */
-                                /* If line is at 20px, content starts at 45px. Dot center needs to be on the 20px line. */
-                                /* So, relative to timeline-content block (which is offset by padding-left 45px), the dot needs to be at -25px to center on the 20px global line */
-                                /* Let's adjust: timeline dot (20px wide) needs to be centered on line at 20px.
-                                   padding-left of timeline-item is 45px.
-                                   So from the left edge of timeline-content, the dot's left edge should be -25px.
-                                   If dot is 20px wide, its center is at -15px.
-                                   The previous -30px might have been relative to something else or accounting for other factors.
-                                   Let's try to make it simple: if timeline-content is pushed by 45px, and line is at 20px,
-                                   the dot center (from timeline-content edge) is 20 - 45 = -25px.
-                                   So dot's left edge is -25px - (dot_width/2) = -25 - 10 = -35px.
-                                */
-                 left: -35px; /* (20px from edge - 45px padding_left - (20px_dot_width / 2) + 3px_border) */
             }
             
-            .footer-container {
-                padding-left: 1rem;
-                padding-right: 1rem;
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                margin-left: 0 !important;
             }
+            
+            .timeline-item .timeline-content::after {
+                left: -30px !important;
+                right: auto !important;
+            }
+            
             .footer-content {
-                grid-template-columns: 1fr; /* Stack columns on mobile */
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-
+            
             .contact-info {
                 flex-direction: column;
-                align-items: center; /* Center items when stacked */
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+            
+            .cta-section {
+                padding: 40px 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.7rem;
             }
         }
     </style>
@@ -1076,7 +1010,7 @@
                     <p>The CAO system typically allows you to select up to 6 program choices across various KZN institutions with one application fee.</p>
                     <ul>
                         <li><strong>Research Thoroughly:</strong> Investigate programs that align with your academic strengths, interests, and career aspirations. Check specific admission requirements for each program.</li>
-                        <li><strong>Diversify Choices:</strong> Include a mix of programs – some that are highly competitive ("reach"), some where your marks align well ("match"), and some where you comfortably meet requirements ("safety").</li>
+                        <li><strong>Diversify Choices:</strong> Include a mix of programs -- some that are highly competitive ("reach"), some where your marks align well ("match"), and some where you comfortably meet requirements ("safety").</li>
                         <li><strong>Consider Multiple Institutions:</strong> Applying to programs at different universities can increase your chances of acceptance.</li>
                     </ul>
 
@@ -1516,9 +1450,6 @@ Thank you.</pre>
                     <div class="social-links">
                         <a href="https://www.facebook.com/SandanezweExcellence" target="_blank" rel="noopener noreferrer" aria-label="S.E.E. on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                         <a href="https://www.instagram.com/sandanezwe_excellence/" target="_blank" rel="noopener noreferrer" aria-label="S.E.E. on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <!-- Add official Twitter/X link if available, otherwise remove or keep as placeholder -->
-                        <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="S.E.E. on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a> -->
-                        <!-- Ensure WhatsApp link is to a business account or public contact method, not personal number if privacy is a concern -->
                         <a href="https://wa.me/27648784287" target="_blank" rel="noopener noreferrer" aria-label="Contact S.E.E. on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -1567,14 +1498,6 @@ Thank you.</pre>
                 button.addEventListener('click', () => {
                     const answer = document.getElementById(button.getAttribute('aria-controls'));
                     const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-                    // Close all other FAQs if you want only one open at a time
-                    // faqQuestions.forEach(btn => {
-                    //     if (btn !== button) {
-                    //         btn.setAttribute('aria-expanded', 'false');
-                    //         document.getElementById(btn.getAttribute('aria-controls')).style.display = 'none';
-                    //     }
-                    // });
                     
                     button.setAttribute('aria-expanded', !isExpanded);
                     answer.style.display = isExpanded ? 'none' : 'block';
@@ -1602,42 +1525,38 @@ Thank you.</pre>
                 });
             }
 
-
             // Animate sections on scroll (Intersection Observer)
             const animatedSections = document.querySelectorAll('.fade-in');
             if ("IntersectionObserver" in window) {
                 const observer = new IntersectionObserver((entries, observerInstance) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.style.animationPlayState = 'running'; // Or add class that starts animation
-                            observerInstance.unobserve(entry.target); // Optional: stop observing after animation
+                            entry.target.style.animationPlayState = 'running';
+                            observerInstance.unobserve(entry.target);
                         }
                     });
                 }, {
-                    threshold: 0.1 // Trigger when 10% of the element is visible
+                    threshold: 0.1
                 });
 
                 animatedSections.forEach(section => {
-                    section.style.opacity = '0'; // Start hidden for JS animation
+                    section.style.opacity = '0';
                     observer.observe(section);
                 });
             } else {
-                // Fallback for browsers that don't support IntersectionObserver
                 animatedSections.forEach(section => {
                     section.style.opacity = '1';
                 });
             }
 
-
-            // Smooth scrolling for anchor links (already handled by html { scroll-behavior: smooth; } in CSS)
-            // If more complex offset needed:
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
-                    if (targetId.length > 1 && document.querySelector(targetId)) { // Check if it's a valid ID selector and element exists
+                    if (targetId.length > 1 && document.querySelector(targetId)) {
                         e.preventDefault();
                         const targetElement = document.querySelector(targetId);
-                        const headerOffset = document.querySelector('header') ? document.querySelector('header').offsetHeight : 80; // Adjust offset for sticky header
+                        const headerOffset = document.querySelector('header') ? document.querySelector('header').offsetHeight : 80;
                         const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                         const offsetPosition = elementPosition - headerOffset;
 

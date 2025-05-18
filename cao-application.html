@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S.E.E CAO Application Guide | Sandanezwe Embodiment of Excellence</title>
-    <meta name="description" content="Complete guide to applying for universities through the Central Applications Office (CAO) in KwaZulu-Natal. Includes step-by-step instructions for 2026 applications with S.E.E sponsorship.">
-    <meta name="keywords" content="CAO application, university application, KZN universities, S.E.E, Sandanezwe Embodiment of Excellence, university sponsorship, CAO guide, UKZN application, DUT application, MUT application">
+    <meta name="description"
+        content="Complete guide to applying for universities through the Central Applications Office (CAO) in KwaZulu-Natal. Includes step-by-step instructions for 2026 applications with S.E.E sponsorship.">
+    <meta name="keywords"
+        content="CAO application, university application, KZN universities, S.E.E, Sandanezwe Embodiment of Excellence, university sponsorship, CAO guide, UKZN application, DUT application, MUT application">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -32,12 +35,12 @@
         /* Custom Properties */
         :root {
             --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
-            --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            --secondary-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
             --text-color: #333;
             --accent-color: #ffd700;
             --bg-color: #f5f5f5;
             --card-bg: #fff;
-            --card-border: rgba(0,0,0,0.1);
+            --card-border: rgba(0, 0, 0, 0.1);
             --highlight: #ff6b00;
             --success: #28a745;
             --warning: #ffc107;
@@ -62,7 +65,7 @@
             color: #000;
             padding: 1rem 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -74,32 +77,26 @@
             padding: 0 1rem;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
         .logo img {
-            height: 60px;
-            margin-right: 1rem;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
+            height: 40px;
+            /* Smaller logo */
+            margin-right: 0.75rem;
         }
 
         .logo-text h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            /* Smaller heading */
+            font-weight: 600;
             margin: 0;
+            line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 0.75rem;
+            /* Smaller subtext */
+            opacity: 0.7;
         }
+
 
         /* Nav Styles */
         nav ul {
@@ -124,14 +121,38 @@
 
         /* Hero Section */
         .hero {
-            background: var(--secondary-gradient);
+            position: relative;
             color: white;
             padding: 4rem 2rem;
             text-align: center;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJub2lzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDEiIG51bU9jdGF2ZXM9IjUiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMC4wNSAwIDAgMCAwIDAuMDUgMCAwIDAgMCAwLjA1IDAgMCAwIDAgMSIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbm9pc2UpIi8+PC9zdmc+');
-            background-blend-mode: overlay;
-            position: relative;
+            overflow: hidden;
         }
+
+        /* Blurred background using ::before */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--secondary-gradient),
+                url('https://media.istockphoto.com/id/1988188005/photo/university-student-woman-and-outdoor-for-graduation-with-memory-smile-or-thinking-or.jpg?s=612x612&w=0&k=20&c=cFtjo-drm6_nxczm3E62TfVp7B7J6oMauvMCsuBNoN8=');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            filter: blur(8px);
+            transform: scale(1.1);
+            /* Prevent edge clipping from blur */
+            z-index: 0;
+            opacity: 0.9;
+            /* Optional for better text contrast */
+        }
+
+        /* Keep content above the blurred background */
+        .hero>* {
+            position: relative;
+            z-index: 1;
+        }
+
 
         .hero h1 {
             font-size: 2.5rem;
@@ -209,7 +230,7 @@
         .step-card {
             background: var(--card-bg);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--accent-color);
@@ -217,7 +238,7 @@
 
         .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .step-card h3 {
@@ -237,7 +258,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .step-card p, .step-card ul {
+        .step-card p,
+        .step-card ul {
             margin-bottom: 1rem;
         }
 
@@ -294,7 +316,7 @@
 
         .copy-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Checklist */
@@ -311,7 +333,7 @@
             background: var(--card-bg);
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .checklist-item i {
@@ -353,7 +375,7 @@
             background: var(--card-bg);
             border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
@@ -388,7 +410,7 @@
             border-radius: 10px;
             padding: 2rem;
             margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .details-section h3 {
@@ -440,7 +462,7 @@
             text-align: center;
             border-radius: 10px;
             margin: 3rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .cta-section h2 {
@@ -465,12 +487,12 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* FAQ Section */
@@ -575,7 +597,7 @@
 
         .social-links a {
             color: #fff;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -594,7 +616,7 @@
 
         .footer-bottom {
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
         }
 
@@ -720,8 +742,15 @@
 
         /* Animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
@@ -729,16 +758,18 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <div class="custom-logo">S.E.E</div>
+                <img src="https://sandanezweexcellence.co.za/assets/images/s.e.e-logo-transparent.png" alt="SEE Logo">
                 <div class="logo-text">
                     <h1>Sandanezwe Embodiment of Excellence</h1>
                     <span>Empowering through education</span>
                 </div>
             </div>
+
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -755,14 +786,17 @@
     </header>
 
     <section class="hero">
-        <h1>CAO Application Guide 2026</h1>
-        <p>Welcome to our comprehensive guide for applying to KwaZulu-Natal universities through the Central Applications Office (CAO).</p>
-        
+        <h1>CAO Application Guide 2025</h1>
+        <p>Welcome to our comprehensive guide for applying to KwaZulu-Natal universities through the Central
+            Applications Office (CAO).</p>
+
         <div class="announcement">
             <h2>🎓 Special Announcement</h2>
-            <p>We are proud to announce that <strong>S.E.E has selected 5 students</strong> to receive sponsorship for their CAO application fees. This initiative empowers students to manage their own applications while we provide financial support.</p>
+            <p>We are proud to announce that <strong>S.E.E has selected 5 students</strong> to receive sponsorship for
+                their CAO application fees. This initiative empowers students to manage their own applications while we
+                provide financial support.</p>
         </div>
-        
+
         <a href="#guide" class="cta-btn">Start Your Application Now</a>
     </section>
 
@@ -770,13 +804,15 @@
         <div class="section-title">
             <h2>About This Initiative</h2>
         </div>
-        
+
         <div class="steps-container">
             <div class="step-card">
                 <h3><i class="fas fa-graduation-cap"></i>Our Mission</h3>
-                <p>At Sandanezwe Embodiment of Excellence (S.E.E), we believe in empowering students to take control of their educational journey. Our sponsorship program removes financial barriers while teaching valuable life skills.</p>
+                <p>At Sandanezwe Embodiment of Excellence (S.E.E), we believe in empowering students to take control of
+                    their educational journey. Our sponsorship program removes financial barriers while teaching
+                    valuable life skills.</p>
             </div>
-            
+
             <div class="step-card">
                 <h3><i class="fas fa-hand-holding-heart"></i>How We Support You</h3>
                 <p>Instead of handling applications on your behalf, we provide:</p>
@@ -786,7 +822,7 @@
                     <li>Support and guidance throughout the process</li>
                 </ul>
             </div>
-            
+
             <div class="step-card">
                 <h3><i class="fas fa-lightbulb"></i>Why This Approach Works</h3>
                 <p>By completing your own application:</p>
@@ -804,12 +840,13 @@
         <div class="section-title">
             <h2>Complete CAO Application Guide</h2>
         </div>
-        
+
         <div class="info-box">
             <h3><i class="fas fa-info-circle"></i> Important Update</h3>
-            <p>Use your <strong>March 2025 Results</strong> for your application. Applications for 2026 academic year are now open. General closing dates are between 30 September and 30 October (varies by course).</p>
+            <p>Use your <strong>March 2025 Results</strong> for your application. Applications for 2026 academic year
+                are now open. General closing dates are between 30 September and 30 October (varies by course).</p>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-map-marked-alt"></i> Step 1: Visit the CAO Website</h3>
             <p>Start by visiting the official Central Applications Office website:</p>
@@ -822,7 +859,7 @@
                 <p><strong>Direct Link:</strong> <a href="http://www.cao.ac.za" target="_blank">www.cao.ac.za</a></p>
             </div>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-edit"></i> Step 2: Start Your Application</h3>
             <p>On the CAO homepage:</p>
@@ -830,14 +867,15 @@
                 <li>Click on the <strong>"Apply"</strong> button at the top of the page</li>
                 <li>You'll be directed to the application portal</li>
                 <li>If you're a new applicant, click on <strong>"Continue with Application"</strong></li>
-                <li>If you already have a CAO number, click on <strong>"Login"</strong> and enter your existing credentials</li>
+                <li>If you already have a CAO number, click on <strong>"Login"</strong> and enter your existing
+                    credentials</li>
             </ul>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-user"></i> Step 3: Preparing Your Personal Information</h3>
             <p>Before you begin, make sure you have the following information ready:</p>
-            
+
             <div class="details-section">
                 <h3>Required Personal Details</h3>
                 <div class="details-list">
@@ -857,7 +895,7 @@
                             <li>Physical Address (with postal code)</li>
                         </ul>
                     </div>
-                    
+
                     <div class="details-column">
                         <h4>Next of Kin / Guardian Details</h4>
                         <ul>
@@ -868,7 +906,7 @@
                             <li>Email Address (if available)</li>
                         </ul>
                     </div>
-                    
+
                     <div class="details-column">
                         <h4>Academic Details</h4>
                         <ul>
@@ -880,22 +918,27 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="warning-box info-box">
                 <h4><i class="fas fa-exclamation-triangle"></i> Important Privacy Notice</h4>
-                <p>When sharing information with us, protect your personal data. Never share your full ID number or other sensitive information online. Only send us your EasyPay number once you've completed your application.</p>
+                <p>When sharing information with us, protect your personal data. Never share your full ID number or
+                    other sensitive information online. Only send us your EasyPay number once you've completed your
+                    application.</p>
             </div>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-university"></i> Step 4: Selecting Your Courses & Universities</h3>
             <p>The CAO system allows you to select up to 6 program choices across KwaZulu-Natal institutions:</p>
             <ul>
-                <li><strong>Choose wisely:</strong> Research programs that align with your academic strengths and career goals</li>
-                <li><strong>Diversity your choices:</strong> Include a mix of competitive and less competitive programs</li>
-                <li><strong>Consider multiple institutions:</strong> Apply to several universities to increase your chances</li>
+                <li><strong>Choose wisely:</strong> Research programs that align with your academic strengths and career
+                    goals</li>
+                <li><strong>Diversity your choices:</strong> Include a mix of competitive and less competitive programs
+                </li>
+                <li><strong>Consider multiple institutions:</strong> Apply to several universities to increase your
+                    chances</li>
             </ul>
-            
+
             <div class="details-section">
                 <h3>KZN Institutions Available Through CAO</h3>
                 <div class="details-list">
@@ -908,7 +951,7 @@
                             <li>University of Zululand (UNIZULU)</li>
                         </ul>
                     </div>
-                    
+
                     <div class="details-column">
                         <h4>TVET Colleges</h4>
                         <ul>
@@ -924,31 +967,36 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="info-box">
                 <h4><i class="fas fa-lightbulb"></i> Application Strategy</h4>
                 <p>When selecting your programs, include a mix of "reach," "match," and "safety" options:</p>
                 <ul>
-                    <li><strong>1-2 Reach Programs:</strong> Competitive programs that might be challenging to get into</li>
-                    <li><strong>2-3 Match Programs:</strong> Programs where your marks align with typical admission requirements</li>
-                    <li><strong>1-2 Safety Programs:</strong> Programs where your marks exceed the typical requirements</li>
+                    <li><strong>1-2 Reach Programs:</strong> Competitive programs that might be challenging to get into
+                    </li>
+                    <li><strong>2-3 Match Programs:</strong> Programs where your marks align with typical admission
+                        requirements</li>
+                    <li><strong>1-2 Safety Programs:</strong> Programs where your marks exceed the typical requirements
+                    </li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-file-upload"></i> Step 5: Uploading Your Documents</h3>
             <p>The CAO requires certain documents to verify your application. Make sure they are clear and legible.</p>
-            
+
             <div class="details-section">
                 <h3>Required Documents</h3>
                 <ul>
-                    <li><strong>Certified copy of your ID document</strong> (must be certified within the last 3 months)</li>
+                    <li><strong>Certified copy of your ID document</strong> (must be certified within the last 3 months)
+                    </li>
                     <li><strong>Grade 11 final report</strong> or latest available report</li>
                     <li><strong>Grade 12 March 2025 results</strong> (or your most recent academic results)</li>
-                    <li><strong>Power of Attorney form</strong> (download from the CAO website, print, sign, and upload)</li>
+                    <li><strong>Power of Attorney form</strong> (download from the CAO website, print, sign, and upload)
+                    </li>
                 </ul>
-                
+
                 <h4 style="margin-top: 1.5rem;">How to Upload Documents:</h4>
                 <ol>
                     <li>Scan or take clear photos of your documents using your phone</li>
@@ -958,10 +1006,11 @@
                     <li>Verify the document appears in your profile</li>
                 </ol>
             </div>
-            
+
             <div class="info-box">
                 <h4><i class="fas fa-camera"></i> Document Photo Tips</h4>
-                <p>If you don't have access to a scanner, follow these tips for taking clear document photos with your phone:</p>
+                <p>If you don't have access to a scanner, follow these tips for taking clear document photos with your
+                    phone:</p>
                 <ul>
                     <li>Find good lighting (natural daylight works best)</li>
                     <li>Place documents on a flat, dark surface</li>
@@ -971,11 +1020,12 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-money-bill-wave"></i> Step 6: Getting Your EasyPay Number & Payment</h3>
-            <p>After completing your application, you'll receive an EasyPay number. This is the <strong>only information</strong> you need to send to us for sponsorship.</p>
-            
+            <p>After completing your application, you'll receive an EasyPay number. This is the <strong>only
+                    information</strong> you need to send to us for sponsorship.</p>
+
             <div class="details-section">
                 <h3>How to Get Your EasyPay Number</h3>
                 <ol>
@@ -984,10 +1034,10 @@
                     <li>The system will generate an EasyPay number (format: 10-digit number)</li>
                     <li>Take a screenshot or write down this number</li>
                 </ol>
-                
+
                 <h4 style="margin-top: 1.5rem;">How to Send Us Your EasyPay Number:</h4>
                 <p>Send <strong>only</strong> the following information to us via WhatsApp (064 878 4287):</p>
-                
+
                 <div class="example-box">
                     <button class="copy-btn" onclick="copyExample()">Copy Message Template</button>
                     Hi, I've completed my CAO application.
@@ -996,7 +1046,7 @@
                     Thank you.
                 </div>
             </div>
-            
+
             <div class="warning-box info-box">
                 <h4><i class="fas fa-exclamation-triangle"></i> Important</h4>
                 <p><strong>DO NOT</strong> send us your:</p>
@@ -1009,7 +1059,7 @@
                 <p>We only need your EasyPay number to make the payment on your behalf.</p>
             </div>
         </div>
-        
+
         <div class="step-card full-width">
             <h3><i class="fas fa-check-circle"></i> Step 7: Tracking Your Application</h3>
             <p>After we've made the payment, you should:</p>
@@ -1019,7 +1069,7 @@
                 <li>Upload any additional documents requested by institutions</li>
                 <li>Update your academic results as you receive them (e.g., Trial Exams, Final Matric results)</li>
             </ul>
-            
+
             <div class="success-box info-box">
                 <h4><i class="fas fa-graduation-cap"></i> Next Steps After Applying</h4>
                 <p>Once your application is complete and payment is made:</p>
@@ -1038,7 +1088,7 @@
         <div class="section-title">
             <h2>Quick Application Checklist</h2>
         </div>
-        
+
         <div class="checklist">
             <div class="checklist-item">
                 <i class="fas fa-check-circle"></i>
@@ -1077,7 +1127,8 @@
 
     <div class="cta-section">
         <h2>Ready to Secure Your Future?</h2>
-        <p>Don't wait! Start your CAO application today to ensure you meet all deadlines. Remember, some competitive programs close earlier than others.</p>
+        <p>Don't wait! Start your CAO application today to ensure you meet all deadlines. Remember, some competitive
+            programs close earlier than others.</p>
         <a href="http://www.cao.ac.za" target="_blank" class="cta-btn">Go to CAO Website Now</a>
     </div>
 
@@ -1085,16 +1136,17 @@
         <div class="section-title">
             <h2>Application Timeline for 2026 Entry</h2>
         </div>
-        
+
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">May 2025</div>
                     <h3>Applications Open</h3>
-                    <p>CAO applications for 2026 academic year open. Early applications receive priority consideration.</p>
+                    <p>CAO applications for 2026 academic year open. Early applications receive priority consideration.
+                    </p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">31 August 2025</div>
@@ -1102,7 +1154,7 @@
                     <p>Closing date for most Health Sciences programs (e.g., Medicine, Diagnostic Radiography).</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">30 September 2025</div>
@@ -1110,7 +1162,7 @@
                     <p>Deadline for most undergraduate programs at UKZN, DUT, and MUT.</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">31 October 2025</div>
@@ -1118,7 +1170,7 @@
                     <p>Last chance for most remaining programs before late application fees apply.</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">1 November 2025</div>
@@ -1126,7 +1178,7 @@
                     <p>Late application fees apply (typically double the standard fee).</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">November-December 2025</div>
@@ -1134,7 +1186,7 @@
                     <p>Complete your final exams and update your CAO profile with these results when available.</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">January 2026</div>
@@ -1142,7 +1194,7 @@
                     <p>Final acceptance offers sent after Matric results are released.</p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">February 2026</div>
@@ -1157,28 +1209,36 @@
         <div class="section-title">
             <h2>Frequently Asked Questions</h2>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">How many programs can I apply for?</div>
             <div class="faq-answer">
-                <p>You can apply for up to 6 programs across all CAO member institutions in KwaZulu-Natal with a single administration fee. Choose your programs strategically, including a mix of competitive and less competitive options to maximize your chances.</p>
+                <p>You can apply for up to 6 programs across all CAO member institutions in KwaZulu-Natal with a single
+                    administration fee. Choose your programs strategically, including a mix of competitive and less
+                    competitive options to maximize your chances.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">What if I want to change my program choices after applying?</div>
             <div class="faq-answer">
-                <p>You can change your program choices after submitting your application using the "Change of Mind" feature on the CAO website. Log in to your CAO account, click on "Change of Mind," and follow the instructions to update your choices. Be aware that some programs may have already closed for applications by the time you make changes.</p>
+                <p>You can change your program choices after submitting your application using the "Change of Mind"
+                    feature on the CAO website. Log in to your CAO account, click on "Change of Mind," and follow the
+                    instructions to update your choices. Be aware that some programs may have already closed for
+                    applications by the time you make changes.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">How do I know if S.E.E has paid my application fee?</div>
             <div class="faq-answer">
-                <p>After you send us your EasyPay number, we will process the payment within 48 hours. You can verify that payment has been received by logging into your CAO account and checking your application status. You should see "Payment Received" or similar confirmation. We will also send you a confirmation message once payment has been made.</p>
+                <p>After you send us your EasyPay number, we will process the payment within 48 hours. You can verify
+                    that payment has been received by logging into your CAO account and checking your application
+                    status. You should see "Payment Received" or similar confirmation. We will also send you a
+                    confirmation message once payment has been made.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">What documents do I need to upload for my CAO application?</div>
             <div class="faq-answer">
@@ -1189,10 +1249,11 @@
                     <li>Grade 12 March 2025 results (or your most recent academic results)</li>
                     <li>Signed Power of Attorney form (download from the CAO website)</li>
                 </ul>
-                <p>If you're an international applicant, you'll also need to upload a copy of your passport and study permit (if applicable).</p>
+                <p>If you're an international applicant, you'll also need to upload a copy of your passport and study
+                    permit (if applicable).</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">How will I know if I've been accepted?</div>
             <div class="faq-answer">
@@ -1202,44 +1263,58 @@
                     <li>Log in to your CAO account to see application statuses</li>
                     <li>Look for "Provisionally Accepted" or "Accepted" statuses</li>
                 </ul>
-                <p>Institutions may start sending out provisional acceptances from August onwards, with final acceptances coming after Matric results are released in January.</p>
+                <p>Institutions may start sending out provisional acceptances from August onwards, with final
+                    acceptances coming after Matric results are released in January.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">What if my March results aren't very good?</div>
             <div class="faq-answer">
-                <p>It's best to apply with your current results, even if they aren't as strong as you'd like. You can update your CAO profile with improved results later (June exams, September trials, final Matric). Universities will consider your latest available results when making admission decisions.</p>
-                <p>Also, consider including some programs with lower entrance requirements among your choices to increase your chances of acceptance.</p>
+                <p>It's best to apply with your current results, even if they aren't as strong as you'd like. You can
+                    update your CAO profile with improved results later (June exams, September trials, final Matric).
+                    Universities will consider your latest available results when making admission decisions.</p>
+                <p>Also, consider including some programs with lower entrance requirements among your choices to
+                    increase your chances of acceptance.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">Can I apply after the closing dates?</div>
             <div class="faq-answer">
-                <p>Yes, for most programs you can still apply after the closing date, but your application will be marked as "Late Application" and will only be considered after all on-time applications have been processed. Also, from November 1st, a higher "Late Payment" administration fee will apply.</p>
-                <p>However, some competitive programs (like Medicine) explicitly state "No Late Applications will be considered" - for these programs, applications received after the closing date will not be considered at all.</p>
+                <p>Yes, for most programs you can still apply after the closing date, but your application will be
+                    marked as "Late Application" and will only be considered after all on-time applications have been
+                    processed. Also, from November 1st, a higher "Late Payment" administration fee will apply.</p>
+                <p>However, some competitive programs (like Medicine) explicitly state "No Late Applications will be
+                    considered" - for these programs, applications received after the closing date will not be
+                    considered at all.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">Why does S.E.E require me to do my own application?</div>
             <div class="faq-answer">
                 <p>We require students to complete their own applications for several important reasons:</p>
                 <ul>
                     <li><strong>Security:</strong> Your personal information remains under your control</li>
-                    <li><strong>Direct communication:</strong> You receive all updates and information directly from CAO and universities</li>
-                    <li><strong>Skill development:</strong> You learn valuable application skills that will benefit you in the future</li>
+                    <li><strong>Direct communication:</strong> You receive all updates and information directly from CAO
+                        and universities</li>
+                    <li><strong>Skill development:</strong> You learn valuable application skills that will benefit you
+                        in the future</li>
                     <li><strong>Responsibility:</strong> You take ownership of your educational journey</li>
                 </ul>
-                <p>Our goal is not just to provide financial support but to empower you to navigate these processes independently.</p>
+                <p>Our goal is not just to provide financial support but to empower you to navigate these processes
+                    independently.</p>
             </div>
         </div>
-        
+
         <div class="faq-item">
             <div class="faq-question">What happens if I'm not one of the 5 selected students for sponsorship?</div>
             <div class="faq-answer">
-                <p>Even if you weren't selected for sponsorship, this guide is still valuable for you! You can follow all the steps to complete your CAO application independently. The standard CAO application fee (for on-time applications) is typically R250-R300, which you would need to pay yourself through methods like EFT, bank deposit, or retail payment partners like Shoprite/Checkers or Pep.</p>
+                <p>Even if you weren't selected for sponsorship, this guide is still valuable for you! You can follow
+                    all the steps to complete your CAO application independently. The standard CAO application fee (for
+                    on-time applications) is typically R250-R300, which you would need to pay yourself through methods
+                    like EFT, bank deposit, or retail payment partners like Shoprite/Checkers or Pep.</p>
             </div>
         </div>
     </div>
@@ -1256,7 +1331,7 @@
                         <li><a href="#faq">Frequently Asked Questions</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Resources</h3>
                     <ul>
@@ -1266,26 +1341,29 @@
                         <li><a href="http://www.mut.ac.za" target="_blank">Mangosuthu University of Technology</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>About S.E.E</h3>
-                    <p>Sandanezwe Embodiment of Excellence (S.E.E) is dedicated to empowering rural students through education, leadership training, and community development in the Sandanezwe Rural Area.</p>
+                    <p>Sandanezwe Embodiment of Excellence (S.E.E) is dedicated to empowering rural students through
+                        education, leadership training, and community development in the Sandanezwe Rural Area.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/SandanezweExcellence" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/sandanezwe_excellence/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/SandanezweExcellence" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sandanezwe_excellence/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-text">
                     <p>© 2025 Sandanezwe Embodiment of Excellence. All Rights Reserved.</p>
                 </div>
                 <p class="footer-verse">"I can do all things through Christ who strengthens me" (Philippians 4:13)</p>
                 <div class="contact-info">
-                    
+
                     <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
                         <span>064 878 4287</span>
@@ -1305,7 +1383,7 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('nav ul').classList.toggle('show');
         });
 
@@ -1332,7 +1410,7 @@
 Here's my EasyPay Number: [Your 10-digit number]
 My full name is: [Your full name]
 Thank you.`;
-            
+
             navigator.clipboard.writeText(text).then(() => {
                 const copyBtn = document.querySelector('.copy-btn');
                 copyBtn.textContent = 'Copied!';
@@ -1359,17 +1437,17 @@ Thank you.`;
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    
+
                     // Close mobile menu if open
                     document.querySelector('nav ul').classList.remove('show');
                 }
@@ -1377,4 +1455,5 @@ Thank you.`;
         });
     </script>
 </body>
+
 </html>

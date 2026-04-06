@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bursary Buddy SA - Your Guide to Funding 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reusing existing styles - keeping the cool dark theme */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
+            --secondary-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+            --text-color: #fff;
+            --accent-color: #ffd700;
+            --bg-color: #000;
+            --card-bg: rgba(255, 215, 0, 0.05);
+            --card-border: rgba(255, 215, 0, 0.1);
+            --danger-color: #ff4757;
+            --success-color: #2ed573;
+            --info-color: #1e90ff;
+        }
+
+        /* Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #FFA500;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 3rem 0;
+            scroll-margin-top: 80px; /* For smooth scrolling with fixed header */
+        }
+
+        /* Header */
+        header {
+            background: var(--secondary-gradient);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .logo a {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-desktop {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-desktop li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-desktop li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-desktop li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-desktop li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            z-index: 1001;
+        }
+
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-mobile li {
+            margin: 1.5rem 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-mobile li a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPGRlZnM+CiAgICAgICAgPHBhdHRlcm4gaWQ9InBhdHRlcm4iIHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNGRkQ3MDAiIGZpbGwtb3BhY2l0eT0iMC4yIiAvPgogICAgICAgIDwvcGF0dGVybj4KICAgIDwvZGVmcz4KICAgIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiIC8+Cjwvc3ZnPg==');
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            text-decoration: none;
+        }
+
+        /* Search Box */
+        .search-container {
+            margin: 2rem auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-gradient);
+            border: none;
+            color: #000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Category Section */
+        .category-section {
+            background: var(--card-bg);
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .category-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Bursary List Section */
+        .resource-list {
+            padding: 3rem 0;
+        }
+
+        .resource-list h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .resource-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #ff4757;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-gradient);
+            color: #000;
+        }
+
+        .resource-group {
+            margin-bottom: 2rem;
+        }
+
+        .resource-group-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .resource-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-list li {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .resource-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .resource-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-details {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--card-bg);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .contact-method {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-gradient);
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gradient);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .resource-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 80%;
+                margin: 0.3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Adds spacing between buttons */
+    }
+
+    .btn-secondary {
+        margin-left: 0; /* Remove left margin for better stacking */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="#home">Bursary Buddy</a></div>
+            <nav>
+                <ul class="nav-desktop">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#bursaries">Bursaries</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </div>
+            <ul class="nav-mobile">
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#categories" class="mobile-link">Categories</a></li>
+                <li><a href="#bursaries" class="mobile-link">Bursaries</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Unlock Your <span>Future</span>: Find Bursaries Simply</h1>
+                <p>We make finding bursaries in South Africa easy. Your education, our priority.</p>
+                <div class="hero-buttons">
+                    <a href="#bursaries" class="btn btn-primary">Browse Bursaries</a>
+                    <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search for bursaries, institutions or fields of study...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Bursary <span>Categories</span></h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Government</h3>
+                    <p>Funding opportunities from various government departments</p>
+                    <a href="#government" class="btn btn-secondary">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate</h3>
+                    <p>Bursaries from leading companies across sectors</p>
+                    <a href="#corporate" class="btn btn-secondary">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Universities</h3>
+                    <p>University-specific funding opportunities</p>
+                    <a href="#university" class="btn btn-secondary">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Student Loans</h3>
+                    <p>Financial institutions offering student loans</p>
+                    <a href="#loans" class="btn btn-secondary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bursary Resources Section -->
+    <section id="resources" class="resource-section">
+        <div class="container">
+            <h2 class="section-title">Bursary <span>Resources</span></h2>
+            
+            <div class="resource-tabs">
+                <button class="tab-btn active" data-target="all">All Resources</button>
+                <button class="tab-btn" data-target="government">Government</button>
+                <button class="tab-btn" data-target="corporate">Corporate</button>
+                <button class="tab-btn" data-target="university">Universities</button>
+                <button class="tab-btn" data-target="loans">Student Loans</button>
+                <button class="tab-btn" data-target="search">Search Engines</button>
+            </div>
+            
+            <!-- Government Resources -->
+            <div class="resource-group" id="government">
+                <h3 class="resource-group-title">Government Resources</h3>
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <a href="https://www.nsfas.org.za" target="_blank">
+                            <div class="resource-title">National Student Financial Aid Scheme (NSFAS)</div>
+                            <div class="resource-details">Government financial aid scheme for tertiary education</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.nrf.ac.za/bursaries/" target="_blank">
+                            <div class="resource-title">National Research Foundation (NRF)</div>
+                            <div class="resource-details">Bursaries for postgraduate studies and research</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.dhet.gov.za" target="_blank">
+                            <div class="resource-title">Department of Higher Education and Training</div>
+                            <div class="resource-details">Information on higher education funding opportunities</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.dalrrd.gov.za/Branches/Food-Security-Agrarian-Reform/Sector-Education-Training" target="_blank">
+                            <div class="resource-title">Department of Agriculture, Land Reform and Rural Development</div>
+                            <div class="resource-details">Bursaries for agricultural studies</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="http://www.funzalushaka.doe.gov.za/" target="_blank">
+                            <div class="resource-title">Funza Lushaka Bursary Programme</div>
+                            <div class="resource-details">Teaching bursaries for students committed to teaching</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.publicworks.gov.za/" target="_blank">
+                            <div class="resource-title">Department of Public Works and Infrastructure</div>
+                            <div class="resource-details">Bursaries for built environment studies</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.dmr.gov.za/" target="_blank">
+                            <div class="resource-title">Department of Minerals and Resources</div>
+                            <div class="resource-details">Bursaries for mining and related fields</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.gov.za" target="_blank">
+                            <div class="resource-title">South African Government Bursary Listings</div>
+                            <div class="resource-details">Comprehensive listing of government bursaries</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Corporate Resources -->
+            <div class="resource-group" id="corporate">
+                <h3 class="resource-group-title">Corporate and Foundation Bursaries</h3>
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <a href="https://www.sasol.com/careers/learners/bursaries" target="_blank">
+                            <div class="resource-title">Sasol Bursary Programme</div>
+                            <div class="resource-details">Bursaries for science, engineering and technology students</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.standardbank.co.za/southafrica/personal/about-us/graduates-and-bursaries" target="_blank">
+                            <div class="resource-title">Standard Bank</div>
+                            <div class="resource-details">Bursaries for commerce and IT students</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://allangrayorbis.org/" target="_blank">
+                            <div class="resource-title">Allan Gray Orbis Foundation</div>
+                            <div class="resource-details">Scholarships for future entrepreneurs</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://southafrica.angloamerican.com/careers/bursaries" target="_blank">
+                            <div class="resource-title">Anglo American</div>
+                            <div class="resource-details">Bursaries for mining and engineering students</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="http://www.transnet.net/Career/Bursary.aspx" target="_blank">
+                            <div class="resource-title">Transnet</div>
+                            <div class="resource-details">Bursaries for engineering, supply chain and more</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.eskom.co.za/eskom-bursaries-funding-south-african-students/" target="_blank">
+                            <div class="resource-title">Eskom</div>
+                            <div class="resource-details">Bursaries for engineering and technical fields</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.oldmutual.co.za/careers/young-talent/actuarial-bursaries/" target="_blank">
+                            <div class="resource-title">Old Mutual</div>
+                            <div class="resource-details">Actuarial bursaries</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.nedbank.co.za/content/nedbank/za/en/careers/our-people/bursaries.html" target="_blank">
+                            <div class="resource-title">Nedbank</div>
+                            <div class="resource-details">Bursaries for finance, IT and other fields</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.fnb.co.za/about-fnb/careers/bursaries-and-learnerships.html" target="_blank">
+                            <div class="resource-title">FNB</div>
+                            <div class="resource-details">Bursaries for commerce and IT students</div>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.investec.com/en_za/careers/bursary-programme.html" target="_blank">
+                            <div class="resource-title">Investec</div>
+                            <div class="resource-details">Bursaries for finance, commerce and IT</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- University Resources section would be added here -->
+            
+            <!-- Student Loans section would be added here -->
+            
+            <!-- Search Engines section would be added here -->
+        </div>
+    </section>
+
+    <!-- Bursary List Section -->
+    <section id="bursaries" class="bursary-section">
+        <div class="container">
+            <h2 class="section-title">Available <span>Bursaries</span></h2>
+            <ul class="bursary-list">
+                <li class="bursary-item">
+                    <a href="#">
+                        <div class="bursary-title">NSFAS Funding</div>
+                        <div class="bursary-details">For undergraduate studies, covers tuition, accommodation, and living expenses.</div>
+                        <div class="bursary-deadline">Deadline: March 31, 2025</div>
+                    </a>
+                </li>
+                <li class="bursary-item">
+                    <a href="#">
+                        <div class="bursary-title">Allan Gray Orbis Foundation Fellowship</div>
+                        <div class="bursary-details">For aspiring entrepreneurs studying various degrees. Leadership development included.</div>
+                        <div class="bursary-deadline">Deadline: April 30, 2025</div>
+                    </a>
+                </li>
+                <li class="bursary-item">
+                    <a href="#">
+                        <div class="bursary-title">Funza Lushaka Bursary Programme</div>
+                        <div class="bursary-details">For students who commit to teaching at a public school after graduation.</div>
+                        <div class="bursary-deadline">Deadline: January 15, 2025</div>
+                    </a>
+                </li>
+                <li class="bursary-item">
+                    <a href="#">
+                        <div class="bursary-title">Sasol Bursary</div>
+                        <div class="bursary-details">For students studying Engineering, Science, and Technology. Offers vacation work.</div>
+                        <div class="bursary-deadline">Deadline: June 30, 2025</div>
+                    </a>
+                </li>
+                <li class="bursary-item">
+                    <a href="#">
+                        <div class="bursary-title">Investec Bursary</div>
+                        <div class="bursary-details">For academically talented students in fields like Commerce, Science and Engineering.</div>
+                        <div class="bursary-deadline">Deadline: October 31, 2024 (Check for 2025)</div>
+                    </a>
+                </li>
+            </ul>
+            <p class="bursary-note">More bursaries coming soon! We're constantly updating our list.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About <span>Bursary Buddy SA</span></h2>
+            <div class="about-content">
+                <p>
+                    Bursary Buddy SA is dedicated to helping South African students find the financial assistance they need to pursue their education. We aggregate bursary information, provide guidance on applications, and strive to make the process as simple and transparent as possible. Our small team is passionate about education and committed to empowering the next generation of South African leaders.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <div class="contact-content">
+                <p>
+                    Have questions? Need help with your application? Get in touch!
+                </p>
+                <div class="contact-buttons">
+                    <a href="mailto:info@bursarybuddysa.co.za" class="btn btn-primary">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Bursary Buddy. All rights reserved.</p>
+                <p>Developed by <a href="https://vylexnexys.co.za" target="_blank" rel="noopener noreferrer">Vylex Nexys</a> in partnership with <a href="/" target="_blank">S.E.E</a></p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMobile = document.querySelector('.nav-mobile');
+            if (navMobile.style.display === 'flex') {
+                navMobile.style.display = 'none';
+            } else {
+                navMobile.style.display = 'flex';
+            }
+        });
+
+        // Resource Tabs Functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show the corresponding resource group
+                const target = this.getAttribute('data-target');
+                const resourceGroups = document.querySelectorAll('.resource-group');
+                resourceGroups.forEach(group => {
+                    if (target === 'all' || group.id === target) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

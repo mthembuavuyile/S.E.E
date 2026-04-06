@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About S.E.E.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Properties */
+:root {
+    --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
+    --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+    --text-color: #fff;
+    --accent-color: #ffd700;
+    --bg-color: #000;
+    --card-bg: rgba(255,215,0,0.05);
+    --card-border: rgba(255,215,0,0.1);
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.7em;
+    color: var(--accent-color);
+}
+p{
+  margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+.program-type {
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    margin-top: 10px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#home" aria-label="Go to homepage">
+                <img src="assets/images/s.e.e-logo-transparent.png" alt="S.E.E Logo" class="logo">
+            </a>
+
+            <button class="nav-burger" aria-label="Toggle navigation menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+
+            <nav>
+                <ul>
+                   <li><a href="#home">Home</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+             <div class="card">
+              <h2>About Us</h2>
+              <p>Sandanezwe Embodiment of Excellence (S.E.E.) is a non-profit organization dedicated to developing the Sandanezwe rural area in KwaZulu-Natal, South Africa. We empower youth, foster community growth, and promote sustainable development.</p>
+            </div>
+        </section>
+
+        <section id="purpose">
+             <div class="card">
+            <h2>Our Purpose</h2>
+            <p>To empower youth, foster community growth, and promote sustainable development in the Sandanezwe rural area.</p>
+            </div>
+        </section>
+
+        <section id="vision">
+             <div class="card">
+             <h2>Our Vision</h2>
+            <p>To be a leading youth development organization, recognized for our innovative programs, passionate team, and commitment to empowering young people.</p>
+             </div>
+        </section>
+
+        <section id="mission">
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>To provide a supportive and inclusive environment where young people can develop their skills, build their confidence, and unlock their full potential. We strive to foster a sense of belonging, promote social responsibility, and encourage young people to become active contributors to their communities.</p>
+            </div>
+        </section>
+
+        <section id="slogan">
+             <div class="card">
+            <h2>Slogan</h2>
+            <p>“Ye are the light of the world, a chosen generation.”</p>
+             </div>
+        </section>
+        <section id="logo">
+            <div class="card">
+                 <h2>Our Logo</h2>
+                <p>The eagle, symbolizing majestic and incomparable qualities, represents our vision of leadership, excellence, and empowerment.</p>
+            </div>
+        </section>
+
+        <section id="programs">
+             <div class="card">
+            <h2>Our Programs</h2>
+            <div class="program-type">
+                <h3>Academic Support</h3>
+                <ul>
+                    <li>NSFAS Applications</li>
+                    <li>CAO Applications</li>
+                    <li>TVET College Applications</li>
+                     <li>University Applications</li>
+                    <li>Exam Prayer Sessions</li>
+                    <li>Exam Care Packages</li>
+                </ul>
+            </div>
+            <div class="program-type">
+                <h3>Development Programs</h3>
+                <ul>
+                    <li>Academic Camps with Tutors</li>
+                    <li>Safe Transportation</li>
+                    <li>Cross-night Programs</li>
+                    <li>Computer Literacy</li>
+                   <li>Sports Tournaments</li>
+               </ul>
+             </div>
+            </div>
+        </section>
+           <section id="leadership">
+            <div class="card">
+            <h2>Leadership Development</h2>
+                <p>Our board members lead by example with strong educational qualifications and commitment to excellence. We foster leadership through mentorship, training, and practical experience.</p>
+          </div>
+        </section>
+
+        <section id="community-impact">
+            <div class="card">
+                <h2>Community Impact</h2>
+                <p>Focused on rural development through sustainable projects and educational initiatives. We believe in creating lasting change through empowerment and education.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+          <div class="card">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to get involved? Reach out!</p>
+            <div class="contact-details">
+                <p>Phone: +27 123 456 789</p>
+                <p>Phone: 064 878 4287</p>
+                <p>Email: <a href="mailto:info@see.org">info@see.org</a></p>
+                <p>Location: Sandanezwe Rural Area, KwaZulu-Natal</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="footer">
+        <div class="footer">
+            <p>© 2025 Sandanezwe Embodiment of Excellence. All Rights Reserved.</p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="/about" class="footer-link" title="About Us">About</a></li>
+                <li><a href="/team" class="footer-link" title="Our Team">Team</a></li>
+                <li><a href="timeline.html" class="footer-link" title="Our Team">Timeline</a></li>
+
+                <li><a href="/services" class="footer-link" title="Our Services">Services</a></li>
+                <li><a href="/contact" class="footer-link" title="Contact Us">Contact</a></li>
+                <li><a href="/privacy-policy" class="footer-link" title="Privacy Policy">Privacy Policy</a></li>
+                <li><a href="/terms" class="footer-link" title="Terms & Conditions">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    </main>
+    
+    <script src="scripts/header.js"></script>
+    
+    </body>
+    </html>
+    

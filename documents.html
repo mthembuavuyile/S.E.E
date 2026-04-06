@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.E Documents Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-gold': '#FFD700',
+                        'secondary-gold': '#FFA500',
+                        'dark-bg': '#000000',
+                        'soft-gold': 'rgba(255,215,0,0.1)'
+                    },
+                    backgroundImage: {
+                        'primary-gradient': 'linear-gradient(135deg, #FFD700, #FFA500)',
+                        'secondary-gradient': 'linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7))'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .document-item {
+            transition: all 0.3s ease;
+        }
+        .document-item:hover {
+            transform: translateX(10px);
+            background-color: rgba(255,215,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg min-h-screen flex flex-col">
+    <div class="container mx-auto px-4 py-12 flex-grow">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary-gold border-b-4 border-secondary-gold pb-4">
+            S.E.E Documents
+        </h1>
+        
+        <div class="grid md:grid-cols-1 gap-6 max-w-4xl mx-auto">
+            <div class="document-item flex items-center justify-between bg-soft-gold/10 p-6 rounded-xl border border-primary-gold/20 hover:border-primary-gold/50 transition-all">
+                <div class="flex-grow pr-4">
+                    <h3 class="text-xl font-semibold text-primary-gold mb-2">Board Members</h3>
+                    <p class="text-gray-300 text-sm">Comprehensive list and details of our current board members</p>
+                </div>
+                <a href="documents/html/board-members.html" class="group flex items-center space-x-2 bg-primary-gradient text-black px-4 py-2 rounded-lg hover:opacity-90 transition-all">
+                    <span>Open</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="document-item flex items-center justify-between bg-soft-gold/10 p-6 rounded-xl border border-primary-gold/20 hover:border-primary-gold/50 transition-all">
+                <div class="flex-grow pr-4">
+                    <h3 class="text-xl font-semibold text-primary-gold mb-2">Genesis Board Meeting</h3>
+                    <p class="text-gray-300 text-sm">First official board meeting minutes and key discussions</p>
+                </div>
+                <a href="documents/html/genesis-board-meeting.html" class="group flex items-center space-x-2 bg-primary-gradient text-black px-4 py-2 rounded-lg hover:opacity-90 transition-all">
+                    <span>Open</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="document-item flex items-center justify-between bg-soft-gold/10 p-6 rounded-xl border border-primary-gold/20 hover:border-primary-gold/50 transition-all">
+                <div class="flex-grow pr-4">
+                    <h3 class="text-xl font-semibold text-primary-gold mb-2">NPO Information</h3>
+                    <p class="text-gray-300 text-sm">Detailed overview of our non-profit organization</p>
+                </div>
+                <a href="documents/html/npo-information.html" class="group flex items-center space-x-2 bg-primary-gradient text-black px-4 py-2 rounded-lg hover:opacity-90 transition-all">
+                    <span>Open</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="document-item flex items-center justify-between bg-soft-gold/10 p-6 rounded-xl border border-primary-gold/20 hover:border-primary-gold/50 transition-all">
+                <div class="flex-grow pr-4">
+                    <h3 class="text-xl font-semibold text-primary-gold mb-2">NPO Registration Resources</h3>
+                    <p class="text-gray-300 text-sm">Comprehensive guide to NPO registration and legal requirements</p>
+                </div>
+                <a href="documents/html/npo-registration.html" class="group flex items-center space-x-2 bg-primary-gradient text-black px-4 py-2 rounded-lg hover:opacity-90 transition-all">
+                    <span>Open</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-secondary-gradient py-6 text-center text-white">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">&copy; 2025 S.E.E Documents. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | S.E.E.</title>
+    <link rel="stylesheet" href="style.css"> <!-- Assuming your CSS is in style.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Properties (copied from your CSS) */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
+            --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            --text-color: #fff;
+            --accent-color: #ffd700;
+            --bg-color: #000;
+            --card-bg: rgba(255,215,0,0.05);
+            --card-border: rgba(255,215,0,0.1);
+        }
+
+        /* Basic Reset (copied from your CSS) */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base Styles (copied and adapted from your CSS) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the content fills the viewport */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(90%, 1200px);
+            margin-inline: auto;
+            padding: 2rem;
+        }
+
+        /* 404 Specific Styles */
+        .error-container {
+            flex-grow: 1; /* Allow the error content to take up remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            background: var(--primary-gradient);
+            color: var(--bg-color);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity .3s ease;
+            display: inline-block; /* Important for the hover effect to work correctly */
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer (adapted from your CSS - adjust as needed) */
+        .footer {
+            padding: 3rem 0;
+            background: rgba(0,0,0,0.95);
+            text-align: center;
+            margin-top: 4rem; /* Reduced margin for better visual balance */
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Oops! The page you're looking for can't be found.</p>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 Sandanezwe Embodiment of Excellence (S.E.E.)</p>
+    </footer>
+
+</body>
+</html>

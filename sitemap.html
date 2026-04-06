@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,17 @@
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #FFD700, #FFA500);
-            --secondary-gradient: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            --secondary-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
             --text-color: #fff;
             --accent-color: #ffd700;
             --bg-color: #000;
-            --card-bg: rgba(255,215,0,0.05);
-            --card-border: rgba(255,215,0,0.1);
+            --card-bg: rgba(255, 215, 0, 0.05);
+            --card-border: rgba(255, 215, 0, 0.1);
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -28,7 +31,8 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 80px; /* Account for fixed header */
+            padding-top: 80px;
+            /* Account for fixed header */
         }
 
         a {
@@ -52,10 +56,10 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .header .container {
@@ -72,7 +76,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .sitemap-container {
@@ -95,7 +99,7 @@
 
         .sitemap-section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255,215,0,0.1);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
             border-color: var(--accent-color);
         }
 
@@ -182,11 +186,12 @@
 
         @media (hover: hover) {
             .sitemap-list a:hover {
-                background: rgba(255,215,0,0.1);
+                background: rgba(255, 215, 0, 0.1);
             }
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -199,45 +204,39 @@
             <h2>Primary Pages</h2>
             <ul class="sitemap-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="team.html">Team</a></li>
+                <li><a href="team.html">Our Team</a></li>
                 <li><a href="timeline.html">Timeline</a></li>
             </ul>
         </section>
 
         <section class="sitemap-section">
-            <h2>Resources</h2>
+            <h2>Programs & Applications</h2>
             <ul class="sitemap-list">
-                <li><a href="resources.html">Resources Overview</a></li>
-                <li><a href="educational.html">Educational Materials</a></li>
-                <li><a href="research.html">Research Papers</a></li>
-                <li><a href="toolkit.html">Toolkit</a></li>
+                <li><a href="funding.html">Funding Opportunities</a></li>
+                <li><a href="cao-application.html">CAO Application</a></li>
             </ul>
         </section>
 
         <section class="sitemap-section">
-            <h2>Documents</h2>
+            <h2>Information & Media</h2>
             <ul class="sitemap-list">
-                <li><a href="documents.html">Document Center</a></li>
-                <li><a href="reports.html">Annual Reports</a></li>
-                <li><a href="policies.html">Policies</a></li>
-                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="documents.html">Documents</a></li>
             </ul>
         </section>
 
         <section class="sitemap-section">
-            <h2>Additional Info</h2>
+            <h2>Navigation</h2>
             <ul class="sitemap-list">
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
             </ul>
         </section>
+
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 S.E.E. Youth Empowerment. All Rights Reserved.</p>
+        <p>&copy; 2026 S.E.E. Youth Empowerment. All Rights Reserved.</p>
     </footer>
 </body>
+
 </html>

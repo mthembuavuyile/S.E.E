@@ -3,43 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.E.E. Document | NPO Registration</title>
-    <link rel="stylesheet" href="../../styles/documents.css">
+    <title>S.E.E. Document | NPO Registration Resources</title>
+    <link rel="icon" href="/assets/images/s.e.e-logo-transparent.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
-    <div class="header">
-        <a href="../../index.html" class="header-link">Home page</a>
-        <a href="../../documents.html" class="header-link">All documents</a>
-    </div>
+    <div id="header-slot"></div>
 
-    <h1>NPO Registration Resources</h1>
+    <main class="page-content">
+        <section class="page-hero">
+            <div class="container page-hero-content">
+                <h1>NPO Registration Resources</h1>
+                <p>Comprehensive guide to NPO registration and legal requirements</p>
+            </div>
+        </section>
 
-    <ul>
-        <li>
-            <a href="https://www.npo.gov.za/PublicNpo/WebApplicationCase/Register" target="_blank" rel="noopener noreferrer">
-                NPO Registration - Department of Social Development
-            </a>
-        </li>
-        <li>
-            <a href="https://eservices.cipc.co.za/" target="_blank" rel="noopener noreferrer">
-                CIPC eServices Portal
-            </a>
-        </li>
-        <li>
-            <a href="https://bizportal.gov.za/" target="_blank" rel="noopener noreferrer">
-                BizPortal - Government Services for Businesses
-            </a>
-        </li>
-        <li>
-            <a href="https://www.gov.za/services/register-nonprofit-organisation" target="_blank" rel="noopener noreferrer">
-                Government Guide to Registering a Nonprofit Organisation
-            </a>
-        </li>
-        <li>
-            <a href="https://www.dsd.gov.za/index.php/documents/category/76-npo-forms" target="_blank" rel="noopener noreferrer">
-                NPO Forms - Department of Social Development
-            </a>
-        </li>
-    </ul>
+        <section>
+            <div class="container">
+                <div class="resource-grid fade-in">
+                    <a href="https://www.npo.gov.za/PublicNpo/WebApplicationCase/Register" target="_blank" rel="noopener noreferrer" class="resource-item">
+                        <div class="resource-title">NPO Registration — Dept. of Social Development</div>
+                        <div class="resource-desc">Official NPO registration portal</div>
+                    </a>
+                    <a href="https://eservices.cipc.co.za/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                        <div class="resource-title">CIPC eServices Portal</div>
+                        <div class="resource-desc">Companies and Intellectual Property Commission services</div>
+                    </a>
+                    <a href="https://bizportal.gov.za/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                        <div class="resource-title">BizPortal</div>
+                        <div class="resource-desc">Government services for businesses</div>
+                    </a>
+                    <a href="https://www.gov.za/services/register-nonprofit-organisation" target="_blank" rel="noopener noreferrer" class="resource-item">
+                        <div class="resource-title">Government Guide to Registering an NPO</div>
+                        <div class="resource-desc">Step-by-step government registration guide</div>
+                    </a>
+                    <a href="https://www.dsd.gov.za/index.php/documents/category/76-npo-forms" target="_blank" rel="noopener noreferrer" class="resource-item">
+                        <div class="resource-title">NPO Forms — Dept. of Social Development</div>
+                        <div class="resource-desc">Download official NPO registration forms</div>
+                    </a>
+                </div>
+                <div style="margin-top: var(--space-xl);">
+                    <a href="../../documents.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Documents</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-slot"></div>
+    <script src="../../scripts/main.js"></script>
 </body>
 </html>

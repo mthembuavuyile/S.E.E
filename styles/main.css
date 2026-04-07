@@ -1378,6 +1378,227 @@ section {
     padding-left: var(--space-sm);
 }
 
+/* ── Team Page ────────────────────────────────────────────── */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+}
+
+.team-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card:not(.team-card-link):hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+}
+
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    background: var(--gold-grad);
+    border-radius: 50%;
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--black);
+    overflow: hidden;
+    border: 3px solid var(--gold-400);
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-name {
+    font-size: var(--font-size-xl);
+    color: var(--text-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.team-role {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.team-social {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: auto;
+}
+
+.team-social a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color var(--transition-base);
+}
+
+.team-social a:hover {
+    color: var(--text-accent);
+}
+
+.team-card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    position: relative;
+    border: 1px solid var(--border-default);
+}
+
+.team-card-link:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-500);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
+
+.team-profile-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--gold-500);
+    color: var(--black);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Individual Profile Page Styles */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+.profile-sidebar {
+    position: sticky;
+    top: 120px;
+    background: var(--bg-card);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    text-align: center;
+}
+
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto var(--space-xl);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--gold-500);
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image-container i {
+    font-size: 5rem;
+    color: var(--gold-500);
+}
+
+.profile-sidebar h1 {
+    font-size: 1.8rem;
+    color: var(--text-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.profile-sidebar .profile-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: var(--space-xl);
+}
+
+.profile-details-list {
+    text-align: left;
+    margin-bottom: var(--space-xl);
+}
+
+.profile-detail-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.profile-detail-item i {
+    color: var(--gold-500);
+    width: 20px;
+}
+
+.profile-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.profile-content-card {
+    background: var(--bg-card);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+}
+
+.profile-content-card h2 {
+    color: var(--text-accent);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.profile-content-card h2 i {
+    color: var(--gold-500);
+    font-size: 1.2rem;
+}
+
+.profile-bio {
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.profile-bio p {
+    margin-bottom: var(--space-md);
+}
+
+@media (max-width: 992px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-sidebar {
+        position: static;
+    }
+}
+
 /* ── 404 Page ─────────────────────────────────────────────── */
 .error-page {
     display: flex;
